@@ -8,8 +8,6 @@ redirect_from:
 
 ---
 
-## About me
-
 Hi, I am Megumin.
 
 I am currently an undergraduate student majoring in Artificial Intelligence at the College of Artificial Intelligence, Jilin University.
