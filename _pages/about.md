@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: "About me"
+lang: en
 author_profile: true
 redirect_from:
   - /about/
@@ -28,7 +29,7 @@ This website is used to share my academic background, projects, publications, no
     <strong>Jilin University</strong><br>
     College of Artificial Intelligence
   </div>
-  <img src="/images/AI1_out.png" alt="College of Artificial Intelligence badge" width="96" style="width: 96px; max-width: 28%; height: auto;">
+  <img src="/images/AI1_out.png" alt="College of Artificial Intelligence badge" width="80" style="width: 80px; max-width: 24%; height: auto;">
 </div>
 
 ## Research Interests

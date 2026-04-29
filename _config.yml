@@ -26,8 +26,10 @@ author:
   name             : "Megumin"
   pronouns         : # example: "she/her"  
   bio              : "A student majored in artificial intelligence."
+  bio_zh           : "人工智能专业本科生。"
   location         :
   employer         : "Jilin University"
+  employer_zh      : "吉林大学"
   uri              : # URL
   email            : 
 
