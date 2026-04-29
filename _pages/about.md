@@ -23,8 +23,13 @@ This website is used to share my academic background, projects, publications, no
 
 ## Education
 
-**Jilin University**  
-College of Artificial Intelligence
+<div class="education-entry">
+  <div>
+    <strong>Jilin University</strong><br>
+    College of Artificial Intelligence
+  </div>
+  <img src="/images/AI1_out.png" alt="College of Artificial Intelligence badge">
+</div>
 
 ## Research Interests
 

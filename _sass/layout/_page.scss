@@ -59,6 +59,31 @@
     font-size: 1em;
   }
 
+  .education-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: $indent-var;
+
+    img {
+      width: min(180px, 32%);
+      height: auto;
+      flex: 0 0 auto;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .education-entry {
+      align-items: flex-start;
+      flex-direction: column;
+
+      img {
+        width: min(180px, 60%);
+      }
+    }
+  }
+
   /* paragraph indents */
   p {
     margin: 0 0 $indent-var;
