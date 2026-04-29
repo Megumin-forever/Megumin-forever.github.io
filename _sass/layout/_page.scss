@@ -67,7 +67,8 @@
     margin-bottom: $indent-var;
 
     img {
-      width: min(180px, 32%);
+      width: 96px;
+      max-width: 28%;
       height: auto;
       flex: 0 0 auto;
     }
@@ -79,7 +80,8 @@
       flex-direction: column;
 
       img {
-        width: min(180px, 60%);
+        width: 96px;
+        max-width: 50%;
       }
     }
   }
