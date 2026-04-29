@@ -9,7 +9,7 @@ redirect_from:
 
 ---
 
-你好，我是 Megumin。
+你好，我是金成勋。
 
 我目前就读于吉林大学人工智能学院，是人工智能专业本科生。
 
@@ -29,7 +29,7 @@ redirect_from:
     <strong>吉林大学</strong><br>
     人工智能学院
   </div>
-  <img src="/images/AI1_out.png" alt="吉林大学人工智能学院徽章" width="80" style="width: 80px; max-width: 24%; height: auto;">
+  <img src="/images/AI1_out.png" alt="吉林大学人工智能学院徽章" width="90" style="width: 90px; max-width: 26%; height: auto;">
 </div>
 
 ## 研究兴趣

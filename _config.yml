@@ -9,9 +9,9 @@
 # Basic Site Settings
 locale                   : "zh-CN"
 site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Megumin-forever"
+title                    : "Chengxun Jin"
 title_separator          : "-"
-name                     : &name "Megumin"
+name                     : &name "Chengxun Jin"
 description              : &description "A student majored in artificial intelligence."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : "https://Megumin-forever.github.io" 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -23,7 +23,7 @@ repository               : "Megumin-forever/Megumin-forever.github.io"
 author:
   # Biographic information
   avatar           : "R.jpg"
-  name             : "Megumin"
+  name             : "Chengxun Jin"
   pronouns         : # example: "she/her"  
   bio              : "A student majored in artificial intelligence."
   bio_zh           : "人工智能专业本科生。"

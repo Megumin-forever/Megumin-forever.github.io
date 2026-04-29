@@ -9,7 +9,7 @@ redirect_from:
 
 ---
 
-Hi, I am Megumin.
+Hi, I am Chengxun Jin.
 
 I am currently an undergraduate student majoring in Artificial Intelligence at the College of Artificial Intelligence, Jilin University.
 
@@ -29,7 +29,7 @@ This website is used to share my academic background, projects, publications, no
     <strong>Jilin University</strong><br>
     College of Artificial Intelligence
   </div>
-  <img src="/images/AI1_out.png" alt="College of Artificial Intelligence badge" width="80" style="width: 80px; max-width: 24%; height: auto;">
+  <img src="/images/AI1_out.png" alt="College of Artificial Intelligence badge" width="90" style="width: 90px; max-width: 26%; height: auto;">
 </div>
 
 ## Research Interests
