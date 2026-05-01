@@ -22,6 +22,10 @@ redirect_from:
 
 这个网站用于展示我的学习经历、项目、学术成果、笔记和简历。
 
+## 最新动态
+
+- **2026.05.01**：我们的论文 *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection* 被 ICML 2026 录用。
+
 ## 教育经历
 
 <div class="education-entry">

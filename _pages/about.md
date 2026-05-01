@@ -22,6 +22,10 @@ My academic interests include:
 
 This website is used to share my academic background, projects, publications, notes, and CV.
 
+## News
+
+- **2026.05.01**: Our paper, *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection*, was accepted to ICML 2026 as a regular paper.
+
 ## Education
 
 <div class="education-entry">
