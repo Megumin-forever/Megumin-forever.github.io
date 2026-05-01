@@ -10,46 +10,13 @@
 main:
   - title: "Publications"
     url: /publications/
-
-#  - title: "Talks"
-#    url: /talks/
-
-#  - title: "Teaching"
-#    url: /teaching/
-    
-  - title: "Portfolio"
-    url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
     
   - title: "CV"
     url: /cv/
-    
-  # - title: "CV"
-  #   url: /cv-json/
-    
-  - title: "Guide"
-    url: /markdown/
 
 main_zh:
   - title: "学术成果"
     url: /publications/
 
-#  - title: "学术报告"
-#    url: /talks/
-
-#  - title: "教学"
-#    url: /teaching/
-
-  - title: "项目"
-    url: /portfolio/
-
-  - title: "博客"
-    url: /year-archive/
-
   - title: "简历"
     url: /cv/
-
-  - title: "指南"
-    url: /markdown/
