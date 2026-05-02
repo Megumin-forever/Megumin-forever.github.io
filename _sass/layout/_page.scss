@@ -48,6 +48,33 @@
   font-size: $type-size-4;
 }
 
+.education-entry {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: $indent-var;
+
+  img {
+    width: 90px;
+    max-width: 26%;
+    height: auto;
+    flex: 0 0 auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .education-entry {
+    align-items: flex-start;
+    flex-direction: column;
+
+    img {
+      width: 90px;
+      max-width: 50%;
+    }
+  }
+}
+
 .page__content {
 
   h2 {
@@ -57,33 +84,6 @@
 
   p, li, dl {
     font-size: 1em;
-  }
-
-  .education-entry {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1.5rem;
-    margin-bottom: $indent-var;
-
-    img {
-      width: 90px;
-      max-width: 26%;
-      height: auto;
-      flex: 0 0 auto;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    .education-entry {
-      align-items: flex-start;
-      flex-direction: column;
-
-      img {
-        width: 90px;
-        max-width: 50%;
-      }
-    }
   }
 
   /* paragraph indents */
