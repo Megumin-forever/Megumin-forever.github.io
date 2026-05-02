@@ -26,16 +26,6 @@
   {% endfor %}
 </ul>
 
-<h2>{{ home.education_title }}</h2>
-
-<div class="education-entry">
-  <div>
-    <strong>{{ home.education.school }}</strong><br>
-    {{ home.education.college }}
-  </div>
-  <img src="{{ home.education.badge | prepend: base_path }}" alt="{{ home.education.badge_alt }}" width="90" style="width: 90px; max-width: 26%; height: auto;">
-</div>
-
 <h2>{{ home.research_title }}</h2>
 
 {{ home.research_text | markdownify }}

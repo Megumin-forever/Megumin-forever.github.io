@@ -18,6 +18,7 @@ en:
   education:
     school: "Jilin University"
     college: "College of Artificial Intelligence"
+    period: "2023-present"
     badge: "/images/AI1_out.png"
     badge_alt: "College of Artificial Intelligence badge"
   research_title: "Research Interests"
@@ -45,6 +46,7 @@ zh:
   education:
     school: "吉林大学"
     college: "人工智能学院"
+    period: "2023-present"
     badge: "/images/AI1_out.png"
     badge_alt: "吉林大学人工智能学院徽章"
   research_title: "研究兴趣"
