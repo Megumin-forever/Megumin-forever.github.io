@@ -1,0 +1,45 @@
+{% include base_path %}
+{% assign home = site.data.home.en %}
+{% if page.lang == "zh" %}
+  {% assign home = site.data.home.zh %}
+{% endif %}
+
+{% for paragraph in home.intro %}
+{{ paragraph | markdownify }}
+{% endfor %}
+
+<p>{{ home.interests_label }}</p>
+
+<ul>
+  {% for interest in home.interests %}
+    <li>{{ interest }}</li>
+  {% endfor %}
+</ul>
+
+{{ home.summary | markdownify }}
+
+<h2>{{ home.news_title }}</h2>
+
+<ul>
+  {% for item in home.news %}
+    <li><strong>{{ item.date }}</strong>{{ home.news_separator }}{{ item.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</li>
+  {% endfor %}
+</ul>
+
+<h2>{{ home.education_title }}</h2>
+
+<div class="education-entry">
+  <div>
+    <strong>{{ home.education.school }}</strong><br>
+    {{ home.education.college }}
+  </div>
+  <img src="{{ home.education.badge | prepend: base_path }}" alt="{{ home.education.badge_alt }}" width="90" style="width: 90px; max-width: 26%; height: auto;">
+</div>
+
+<h2>{{ home.research_title }}</h2>
+
+{{ home.research_text | markdownify }}
+
+<h2>{{ home.contact_title }}</h2>
+
+{{ home.contact_text | markdownify }}

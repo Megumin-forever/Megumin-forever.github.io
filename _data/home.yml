@@ -1,0 +1,53 @@
+en:
+  intro:
+    - "Hi, I am Chengxun Jin."
+    - "I am currently an undergraduate student majoring in Artificial Intelligence at the College of Artificial Intelligence, Jilin University."
+  interests_label: "My academic interests include:"
+  interests:
+    - "Artificial Intelligence"
+    - "Machine Learning"
+    - "Deep Learning"
+  summary: "This website is used to share my academic background, projects, publications, notes, and CV."
+  news_title: "News"
+  news_separator: ": "
+  news:
+    - date: "2026.05.01"
+      text: >-
+        Our paper, *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection*, was accepted to ICML 2026 as a regular paper.
+  education_title: "Education"
+  education:
+    school: "Jilin University"
+    college: "College of Artificial Intelligence"
+    badge: "/images/AI1_out.png"
+    badge_alt: "College of Artificial Intelligence badge"
+  research_title: "Research Interests"
+  research_text: "I am interested in artificial intelligence and related technologies. I am still exploring my research direction and will keep updating this website as I learn more."
+  contact_title: "Contact"
+  contact_text: "You can find me on GitHub: [Megumin-forever](https://github.com/Megumin-forever)"
+
+zh:
+  intro:
+    - "你好，我是金成勋。"
+    - "我目前就读于吉林大学人工智能学院，是人工智能专业本科生。"
+  interests_label: "我的学术兴趣包括："
+  interests:
+    - "人工智能"
+    - "机器学习"
+    - "深度学习"
+  summary: "这个网站用于展示我的学习经历、项目、学术成果、笔记和简历。"
+  news_title: "最新动态"
+  news_separator: "："
+  news:
+    - date: "2026.05.01"
+      text: >-
+        我们的论文 *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection* 被 ICML 2026 录用。
+  education_title: "教育经历"
+  education:
+    school: "吉林大学"
+    college: "人工智能学院"
+    badge: "/images/AI1_out.png"
+    badge_alt: "吉林大学人工智能学院徽章"
+  research_title: "研究兴趣"
+  research_text: "我对人工智能及相关技术感兴趣，目前仍在探索自己的研究方向，并会随着学习进展持续更新这个网站。"
+  contact_title: "联系方式"
+  contact_text: "你可以在 GitHub 找到我：[Megumin-forever](https://github.com/Megumin-forever)"
