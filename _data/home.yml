@@ -11,6 +11,9 @@ en:
   news_title: "News"
   news_separator: ": "
   news:
+    - date: "2026.05.09"
+      text: >-
+        I was invited by Tsinghua University to attend the 2026 Student Academic Exchange Day of the Institute for Artificial Intelligence, Tsinghua University, on May 15. See you at Tsinghua!
     - date: "2026.05.01"
       text: >-
         Our paper, *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection*, was accepted to ICML 2026 as a regular paper.
@@ -39,6 +42,9 @@ zh:
   news_title: "最新动态"
   news_separator: "："
   news:
+    - date: "2026.05.09"
+      text: >-
+        我受到清华大学邀请，将于 5 月 15 日参加 2026 年清华大学人工智能学院大学生学术交流日。清华园见！
     - date: "2026.05.01"
       text: >-
         我们的论文 *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection* 被 ICML 2026 录用。
