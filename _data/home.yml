@@ -16,7 +16,7 @@ en:
         I was invited by Tsinghua University to attend the 2026 Student Academic Exchange Day of the Institute for Artificial Intelligence, Tsinghua University, on May 15. See you at Tsinghua!
     - date: "2026.05.01"
       text: >-
-        Our paper, *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection*, was accepted to ICML 2026 as a regular paper.
+        Our paper, *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection*, was accepted to <span class="news-highlight">ICML 2026</span> as a regular paper.
   education_title: "Education"
   education:
     school: "Jilin University"
@@ -47,7 +47,7 @@ zh:
         我受到清华大学邀请，将于 5 月 15 日参加 2026 年清华大学人工智能学院大学生学术交流日。清华园见！
     - date: "2026.05.01"
       text: >-
-        我们的论文 *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection* 被 ICML 2026 录用。
+        我们的论文 *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection* 被 <span class="news-highlight">ICML 2026</span> 录用。
   education_title: "教育经历"
   education:
     school: "吉林大学"

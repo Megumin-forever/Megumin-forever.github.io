@@ -49,6 +49,11 @@
   font-size: $type-size-4;
 }
 
+.news-highlight {
+  color: var(--global-base-color);
+  font-weight: 700;
+}
+
 .education-entry {
   display: flex;
   align-items: flex-start;
