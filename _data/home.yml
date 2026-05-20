@@ -2,11 +2,11 @@ en:
   intro:
     - "Hi, I am Chengxun Jin."
     - "I am currently an undergraduate student majoring in Artificial Intelligence at the College of Artificial Intelligence, Jilin University."
-  interests_label: "My academic interests include:"
+  interests_label: "My current research interests include:"
   interests:
-    - "Artificial Intelligence"
-    - "Machine Learning"
-    - "Deep Learning"
+    - "Large language model fine-tuning"
+    - "Diffusion model fine-tuning"
+    - "Model quantization"
   summary: "This website is used to share my academic background, projects, publications, notes, and CV."
   news_title: "News"
   news_separator: ": "
@@ -25,7 +25,7 @@ en:
     badge: "/images/AI1_out.png"
     badge_alt: "College of Artificial Intelligence badge"
   research_title: "Research Interests"
-  research_text: "I am interested in artificial intelligence and related technologies. I am still exploring my research direction and will keep updating this website as I learn more."
+  research_text: "I hope to focus my future research on optimizing attention mechanisms, PEFT-based fine-tuning, and multimodal large models."
   contact_title: "Contact"
   contact_text: "You can find me on GitHub: [Megumin-forever](https://github.com/Megumin-forever)"
 
@@ -33,11 +33,11 @@ zh:
   intro:
     - "你好，我是金成勋。"
     - "我目前就读于吉林大学人工智能学院，是人工智能专业本科生。"
-  interests_label: "我的学术兴趣包括："
+  interests_label: "我目前的研究兴趣包括："
   interests:
-    - "人工智能"
-    - "机器学习"
-    - "深度学习"
+    - "大语言模型微调"
+    - "扩散模型微调"
+    - "模型量化"
   summary: "这个网站用于展示我的学习经历、项目、学术成果、笔记和简历。"
   news_title: "最新动态"
   news_separator: "："
@@ -56,6 +56,6 @@ zh:
     badge: "/images/AI1_out.png"
     badge_alt: "吉林大学人工智能学院徽章"
   research_title: "研究兴趣"
-  research_text: "我对人工智能及相关技术感兴趣，目前仍在探索自己的研究方向，并会随着学习进展持续更新这个网站。"
+  research_text: "我后续的研究将主要聚焦于 attention 机制优化、PEFT 微调以及多模态大模型相关研究。"
   contact_title: "联系方式"
   contact_text: "你可以在 GitHub 找到我：[Megumin-forever](https://github.com/Megumin-forever)"
