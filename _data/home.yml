@@ -11,6 +11,9 @@ en:
   news_title: "News"
   news_separator: ": "
   news:
+    - date: "2026.07.05"
+      text: >-
+        I was invited by Peking University to attend the 2026 National Excellent College Students Summer Camp of the School of Software and Microelectronics on July 10. See you at Yan Yuan!
     - date: "2026.05.09"
       text: >-
         I was invited by Tsinghua University to attend the 2026 Student Academic Exchange Day of the Institute for Artificial Intelligence, Tsinghua University, on May 15. See you at Tsinghua!
@@ -42,6 +45,9 @@ zh:
   news_title: "最新动态"
   news_separator: "："
   news:
+    - date: "2026.07.05"
+      text: >-
+        收到北京大学邀请，我将于 7 月 10 日参加北京大学软件与微电子学院 2026 年全国优秀大学生夏令营，燕园见！
     - date: "2026.05.09"
       text: >-
         我受到清华大学邀请，将于 5 月 15 日参加 2026 年清华大学人工智能学院大学生学术交流日。清华园见！
