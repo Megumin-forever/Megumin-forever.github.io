@@ -19,7 +19,7 @@ en:
         I was invited by Tsinghua University to attend the 2026 Student Academic Exchange Day of the Institute for Artificial Intelligence, Tsinghua University, on May 15. See you at Tsinghua!
     - date: "2026.05.01"
       text: >-
-        Our paper, *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection*, was accepted to <span class="news-highlight">ICML 2026</span> as a regular paper.
+        Our paper, *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection*, was accepted to <span class="news-highlight">ICML 2026</span>.
   education_title: "Education"
   education:
     school: "Jilin University"
