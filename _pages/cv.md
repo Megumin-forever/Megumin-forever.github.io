@@ -10,12 +10,10 @@ redirect_from:
 {% include base_path %}
 {% assign home = site.data.home.en %}
 
-
-
 ## Education
 
 <div class="education-entry"
-     style="display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 24px; align-items: center; margin-bottom: 32px;">
+     style="display: grid; grid-template-columns: minmax(0, 1fr) min(200px, 38%); gap: 24px; align-items: center; margin-bottom: 32px;">
   <div>
     <strong>Tsinghua University</strong><br>
     Incoming Master's Student<br>
@@ -23,11 +21,11 @@ redirect_from:
   </div>
   <img src="{{ '/images/tsinghua-logo.png' | relative_url }}"
        alt="Tsinghua University"
-       style="width: 260px; max-width: 100%; height: auto; display: block;">
+       style="width: 100%; max-width: 200px; height: auto; display: block;">
 </div>
 
 <div class="education-entry"
-     style="display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 24px; align-items: center; margin-bottom: 32px;">
+     style="display: grid; grid-template-columns: minmax(0, 1fr) min(200px, 38%); gap: 24px; align-items: center; margin-bottom: 32px;">
   <div>
     <strong>{{ home.education.school }}</strong><br>
     {{ home.education.college }}<br>
@@ -35,10 +33,8 @@ redirect_from:
   </div>
   <img src="{{ home.education.badge | prepend: base_path }}"
        alt="{{ home.education.badge_alt }}"
-       style="width: 260px; max-width: 100%; height: auto; display: block;">
+       style="width: 100%; max-width: 200px; height: auto; display: block;">
 </div>
-
-
 
 ## Research Experience
 
