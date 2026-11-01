@@ -13,7 +13,7 @@ en:
   news:
     - date: "2026.09.25"
       text: >-
-        Our paper, *AHZO* and *QC-A2S*, was accepted to NeurIPS 2026.
+        Our paper, *AHZO* and *QC-A2S*, was accepted to <span class="news-highlight">NeurIPS 2026</span>.
     - date: "2026.05.09"
       text: >-
         I was invited by Tsinghua University to attend the 2026 Student Academic Exchange Day of the Institute for Artificial Intelligence, Tsinghua University, on May 15. See you at Tsinghua!
