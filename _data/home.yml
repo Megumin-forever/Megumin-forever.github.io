@@ -1,7 +1,8 @@
 en:
   intro:
     - "Hi, I am Chengxun Jin."
-    - "I am currently an undergraduate student majoring in Artificial Intelligence at the College of Artificial Intelligence, Jilin University."
+    - "I am currently an undergraduate student majoring in Artificial Intelligence at Jilin University and an intern at Tsinghua University."
+    - "I will begin my master's studies at Tsinghua University in 2027."
   interests_label: "My current research interests include:"
   interests:
     - "Large language model fine-tuning"
@@ -13,7 +14,7 @@ en:
   news:
     - date: "2026.09.25"
       text: >-
-        Our paper, *AHZO* and *QC-A2S*, was accepted to <span class="news-highlight">NeurIPS 2026</span>.
+        Our <span class="news-highlight">two</span> papers, <i>AHZO</i> and <i>QC-A2S</i>, were accepted to <span class="news-highlight">NeurIPS 2026</span>.
     - date: "2026.05.09"
       text: >-
         I was invited by Tsinghua University to attend the 2026 Student Academic Exchange Day of the Institute for Artificial Intelligence, Tsinghua University, on May 15. See you at Tsinghua!
@@ -36,6 +37,7 @@ zh:
   intro:
     - "你好，我是金成勋。"
     - "我目前就读于吉林大学人工智能学院，是人工智能专业本科生。"
+    - "我将于 2027 年进入清华大学攻读硕士学位。"
   interests_label: "我目前的研究兴趣包括："
   interests:
     - "大语言模型微调"
@@ -47,7 +49,7 @@ zh:
   news:
     - date: "2026.09.25"
       text: >-
-        我们的论文 *AHZO* 和 *QC-A2S* 被 <span class="news-highlight">NeurIPS 2026</span> 录用。
+        我们的 <span class="news-highlight">两篇</span> 论文 <i>AHZO</i> 和 <i>QC-A2S</i> 被 <span class="news-highlight">NeurIPS 2026</span> 录用。
     - date: "2026.05.09"
       text: >-
         我受到清华大学邀请，将于 5 月 15 日参加 2026 年清华大学人工智能学院大学生学术交流日。清华园见！
