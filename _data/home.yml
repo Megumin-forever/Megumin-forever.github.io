@@ -29,7 +29,7 @@ en:
     badge: "/images/jluai.png"
     badge_alt: "College of Artificial Intelligence badge"
   research_title: "Research Interests"
-  research_text: "I hope to focus my future research on optimizing attention mechanisms, PEFT-based fine-tuning, and multimodal large models."
+  research_text: "LLM post-training"
   contact_title: "Contact"
   contact_text: "You can find me on GitHub: [Megumin-forever](https://github.com/Megumin-forever)"
 
@@ -64,6 +64,6 @@ zh:
     badge: "/images/jluai.png"
     badge_alt: "吉林大学人工智能学院徽章"
   research_title: "研究兴趣"
-  research_text: "我后续的研究将主要聚焦于 attention 机制优化、PEFT 微调以及多模态大模型相关研究。"
+  research_text: "大模型后训练"
   contact_title: "联系方式"
   contact_text: "你可以在 GitHub 找到我：[Megumin-forever](https://github.com/Megumin-forever)"
