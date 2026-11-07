@@ -45,3 +45,23 @@ redirect_from:
     2026 – Present
   </div>
 </div>
+
+## Honors & Awards
+
+{% if home.awards %}
+<div class="awards-list">
+  {% for award in home.awards %}
+  <div style="margin-bottom: 18px;">
+    <strong>{{ award.name }}</strong><br>
+    <span style="font-size: 0.9em; opacity: 0.8;">
+      {{ award.academic_year }} · {{ award.issuer }}
+    </span>
+    {% if award.description %}
+    <div style="font-size: 0.88em; margin-top: 4px;">
+      {{ award.description }}
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

@@ -1,26 +1,33 @@
+
 en:
   intro:
     - "Hi, I am Chengxun Jin."
     - "I am currently an undergraduate student majoring in Artificial Intelligence at Jilin University and an intern at Tsinghua University."
     - "I will begin my master's studies at Tsinghua University in 2027."
+
   interests_label: "My current research interests include:"
   interests:
     - "Large language model fine-tuning"
     - "Diffusion model fine-tuning"
     - "Model quantization"
+
   summary: "This website is used to share my academic background, projects, publications, notes, and CV."
+
   news_title: "News"
   news_separator: ": "
   news:
     - date: "2026.09.25"
       text: >-
         Our <span class="news-highlight">two</span> papers, <i>AHZO</i> and <i>QC-A2S</i>, were accepted to <span class="news-highlight">NeurIPS 2026</span>.
+
     - date: "2026.05.09"
       text: >-
         I was invited by Tsinghua University to attend the 2026 Student Academic Exchange Day of College of AI, Tsinghua University, on May 15. See you at Tsinghua!
+
     - date: "2026.05.01"
       text: >-
         Our paper, *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection*, was accepted to <span class="news-highlight">ICML 2026</span>.
+
   education_title: "Education"
   education:
     school: "Jilin University"
@@ -28,34 +35,64 @@ en:
     period: "2023-present"
     badge: "/images/jluai.png"
     badge_alt: "College of Artificial Intelligence badge"
+
+  awards_title: "Honors & Awards"
+  awards:
+    - academic_year: "2025–2026"
+      name: "China National Scholarship"
+      issuer: "Ministry of Education of the People's Republic of China"
+      description: >-
+        The highest-level national scholarship awarded to
+        outstanding undergraduate students in China.
+
+    - academic_year: "2025–2026"
+      name: "University Excellent Student"
+      issuer: "Jilin University"
+
+    - academic_year: "2024–2025"
+      name: "University Excellent Student"
+      issuer: "Jilin University"
+
+    - academic_year: "2024–2025"
+      name: "First Class Scholarship"
+      issuer: "Jilin University"
+
   research_title: "Research Interests"
   research_text: "LLM post-training"
+
   contact_title: "Contact"
   contact_text: "You can find me on GitHub: [Megumin-forever](https://github.com/Megumin-forever)"
+
 
 zh:
   intro:
     - "你好，我是金成勋。"
     - "我目前就读于吉林大学人工智能学院，是人工智能专业本科生。"
     - "我将于 2027 年进入清华大学攻读硕士学位。"
+
   interests_label: "我目前的研究兴趣包括："
   interests:
     - "大语言模型微调"
     - "扩散模型微调"
     - "模型量化"
+
   summary: "这个网站用于展示我的学习经历、项目、学术成果、笔记和简历。"
+
   news_title: "最新动态"
   news_separator: "："
   news:
     - date: "2026.09.25"
       text: >-
         我们的 <span class="news-highlight">两篇</span> 论文 <i>AHZO</i> 和 <i>QC-A2S</i> 被 <span class="news-highlight">NeurIPS 2026</span> 录用。
+
     - date: "2026.05.09"
       text: >-
         我受到清华大学邀请，将于 5 月 15 日参加 2026 年清华大学人工智能学院大学生学术交流日。清华园见！
+
     - date: "2026.05.01"
       text: >-
         我们的论文 *LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection* 被 <span class="news-highlight">ICML 2026</span> 录用。
+
   education_title: "教育经历"
   education:
     school: "吉林大学"
@@ -63,7 +100,30 @@ zh:
     period: "2023-present"
     badge: "/images/jluai.png"
     badge_alt: "吉林大学人工智能学院徽章"
+
+  awards_title: "奖项与荣誉"
+  awards:
+    - academic_year: "2025–2026"
+      name: "国家奖学金"
+      issuer: "中华人民共和国教育部"
+      description: >-
+        中国高校本专科学生能够获得的
+        荣誉等级最高的国家级奖学金。
+
+    - academic_year: "2025–2026"
+      name: "校优秀学生"
+      issuer: "吉林大学"
+
+    - academic_year: "2024–2025"
+      name: "校优秀学生"
+      issuer: "吉林大学"
+
+    - academic_year: "2024–2025"
+      name: "一等奖学金"
+      issuer: "吉林大学"
+
   research_title: "研究兴趣"
   research_text: "大模型后训练"
+
   contact_title: "联系方式"
   contact_text: "你可以在 GitHub 找到我：[Megumin-forever](https://github.com/Megumin-forever)"
