@@ -1,0 +1,12 @@
+---
+import Shell from '../Shell.astro';
+import { getSiteData, ui, type Language } from '../../data/i18n';
+interface Props { lang: Language; }
+const { lang } = Astro.props;
+const text = ui[lang];
+const { posts } = getSiteData(lang);
+---
+<Shell title={`${text.blogHeader} | Megumin`} active="blog" lang={lang}>
+  <section class="subpage-header"><p class="eyebrow"><span class="eyebrow-line"></span> NOTES & THOUGHTS</p><h1>{text.blogHeader}<span class="accent-dot">.</span></h1><p>{text.blogSubtitle}</p></section>
+  <div class="blog-list">{posts.length === 0 && <p class="muted-note empty-state">{text.noPosts}</p>}{posts.map((post) => <article class="blog-entry"><span class="item-date">{post.date}</span><h2>{post.title}</h2><p>{post.summary}</p>{post.url && <a href={post.url}>{text.readMore}</a>}</article>)}</div>
+</Shell>

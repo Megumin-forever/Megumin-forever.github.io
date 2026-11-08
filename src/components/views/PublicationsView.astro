@@ -1,0 +1,37 @@
+---
+import Shell from '../Shell.astro';
+import { getSiteData, ui, type Language } from '../../data/i18n';
+interface Props { lang: Language; }
+const { lang } = Astro.props;
+const text = ui[lang];
+const { profile, publications } = getSiteData(lang);
+---
+<Shell title={`${text.publicationHeader} | Megumin`} active="publications" lang={lang}>
+  <section class="subpage-header">
+    <p class="eyebrow"><span class="eyebrow-line"></span> PUBLICATIONS & RESEARCH</p>
+    <h1>{text.publicationHeader}<span class="accent-dot">.</span></h1>
+    <p>{text.publicationSubtitle}</p>
+    <p><a class="section-more" href={profile.scholar} target="_blank" rel="noopener noreferrer">Google Scholar ↗</a></p>
+  </section>
+  <section class="content-section">
+    <div class="section-heading"><span class="section-number">2026 / CONFERENCES</span><h2>{text.publications} <em>{text.publicationsEn}</em></h2></div>
+    <p class="section-intro">{text.publicationIntro}</p>
+    <div class="paper-list">
+      {publications.map((paper, i) => <article class="paper-card">
+        <div class="paper-art"><span class="paper-art-index">0{i + 1}</span><span class="paper-art-label">{paper.venue}</span><div class="paper-art-lines"><i></i><i></i><i></i></div></div>
+        <div class="paper-body">
+          <p class="paper-venue">{paper.venue}</p>
+          <h3>{paper.title}</h3>
+          <p class="paper-authors">{paper.authors}</p>
+          <p class="paper-description">{paper.description}</p>
+          <div class="tag-list">{paper.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+          <div class="paper-actions">
+            <a href={`${lang === 'en' ? '/en' : ''}${paper.paperUrl}`}>{text.paper}</a>
+            {paper.pdfUrl && <a href={paper.pdfUrl} target="_blank" rel="noopener noreferrer">PDF ↗</a>}
+            {paper.codeUrl && <a href={paper.codeUrl} target="_blank" rel="noopener noreferrer">{text.code}</a>}
+          </div>
+        </div>
+      </article>)}
+    </div>
+  </section>
+</Shell>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from './Sidebar.astro';
+import Header from './Header.astro';
+import { pageUrl, ui, type Language, type Page } from '../data/i18n';
+interface Props { title?: string; description?: string; active?: Page; lang?: Language; localeUrls?: { zh: string; en: string }; }
+const { title, description, active = 'home', lang = 'zh', localeUrls } = Astro.props;
+const text = ui[lang];
+---
+<BaseLayout title={title} description={description} lang={lang} page={active} localeUrls={localeUrls}>
+  <div class="site-shell">
+    <Sidebar lang={lang} />
+    <main class="main-panel">
+      <Header active={active} lang={lang} localeUrls={localeUrls} />
+      <slot />
+      <footer class="site-footer">© {new Date().getFullYear()} · {text.builtWith} · <a href={pageUrl(lang, 'home')}>{text.backHome}</a></footer>
+    </main>
+  </div>
+</BaseLayout>

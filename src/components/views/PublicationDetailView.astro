@@ -1,0 +1,36 @@
+---
+import Shell from '../Shell.astro';
+import { ui, type Language } from '../../data/i18n';
+interface Props {
+  lang: Language;
+  paper: {
+    slug: string; title: string; authors: string; venue: string; year: number;
+    description: string; citation: string; tags: string[]; pdfUrl: string; codeUrl: string;
+  };
+}
+const { lang, paper } = Astro.props;
+const text = ui[lang];
+const localeUrls = {
+  zh: `/publication/${paper.slug}/`,
+  en: `/en/publication/${paper.slug}/`,
+};
+---
+<Shell title={`${paper.title} | Megumin`} description={paper.description} active="publications" lang={lang} localeUrls={localeUrls}>
+  <section class="subpage-header publication-detail">
+    <p class="eyebrow"><span class="eyebrow-line"></span> {paper.venue}</p>
+    <h1>{paper.title}</h1>
+    <p>{paper.authors}</p>
+    <div class="tag-list">{paper.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+  </section>
+  <section class="content-section publication-detail">
+    <div class="section-heading"><span class="section-number">RESEARCH / {paper.year}</span><h2>{text.publications}</h2></div>
+    <p class="body-lead">{paper.description}</p>
+    <div class="paper-actions">
+      {paper.pdfUrl && <a href={paper.pdfUrl} target="_blank" rel="noopener noreferrer">PDF ↗</a>}
+      {paper.codeUrl && <a href={paper.codeUrl} target="_blank" rel="noopener noreferrer">{text.code}</a>}
+    </div>
+    <h3>{text.citationLabel}</h3>
+    <p class="publication-citation">{paper.citation}</p>
+    <a class="section-more" href={`${lang === 'en' ? '/en' : ''}/publications/`}>← {text.backPublications}</a>
+  </section>
+</Shell>
