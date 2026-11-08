@@ -1,0 +1,34 @@
+---
+import { getSiteData, ui, type Language } from '../data/i18n';
+interface Props { lang?: Language; }
+const { lang = 'zh' } = Astro.props;
+const { profile } = getSiteData(lang);
+const text = ui[lang];
+const showFacts = Boolean(profile.affiliation || profile.location);
+---
+<aside class="sidebar" aria-label={text.sidebarLabel}>
+  <div class="profile-card">
+    <div class="profile-image-wrap"><img src={profile.avatar} alt={lang === 'zh' ? `${profile.name}的头像` : `Avatar of ${profile.name}`} class="profile-image" /><span class="avatar-availability" aria-hidden="true"></span></div>
+    <div class="profile-main">
+      <p class="profile-eyebrow"><span class="signal-dot"></span> ACADEMIC PORTFOLIO</p>
+      <h2 class="profile-name">{profile.name}</h2>
+      {profile.nameEn !== profile.name && <p class="profile-name-en">{profile.nameEn}</p>}
+      <p class="profile-role">{profile.role}</p>
+    </div>
+    {showFacts && <><div class="profile-rule"></div><div class="profile-facts">
+      {profile.affiliation && <p><span class="fact-icon">⌂</span>{profile.affiliation}</p>}
+      {profile.location && <p><span class="fact-icon">⌖</span>{profile.location}</p>}
+    </div></>}
+    <div class="profile-rule"></div>
+    <p class="small-label">{text.roleLabel}</p>
+    <div class="tag-list">{profile.researchAreas.map((tag) => <span class="tag">{tag}</span>)}</div>
+    <div class="profile-rule"></div>
+    <p class="small-label">{text.contactLabel}</p>
+    <div class="profile-links">
+      {profile.email && <a href={`mailto:${profile.email}`}>{text.email}</a>}
+      {profile.github && <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>}
+      {profile.scholar && <a href={profile.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>}
+    </div>
+  </div>
+  <p class="sidebar-footnote"><span class="sidebar-footnote-star">✳</span> Designed with clarity and curiosity</p>
+</aside>

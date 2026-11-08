@@ -1,0 +1,12 @@
+---
+import Shell from '../Shell.astro';
+import { getSiteData, ui, type Language } from '../../data/i18n';
+interface Props { lang: Language; }
+const { lang } = Astro.props;
+const text = ui[lang];
+const { projects } = getSiteData(lang);
+---
+<Shell title={`${text.projectHeader} | Megumin`} active="projects" lang={lang}>
+  <section class="subpage-header"><p class="eyebrow"><span class="eyebrow-line"></span> SELECTED WORK</p><h1>{text.projectHeader}<span class="accent-dot">.</span></h1><p>{text.projectSubtitle}</p></section>
+  <div class="project-grid project-grid-full">{projects.map((project, i) => <article class="project-card"><span class="project-id">AREA / 0{i+1}</span><h3>{project.title}</h3><p class="project-category">{project.category}</p><p>{project.description}</p><div class="tag-list">{project.tags.map((tag) => <span class="tag">{tag}</span>)}</div>{project.url ? <a href={project.url} target="_blank" rel="noopener noreferrer">{text.seeProject}</a> : null}</article>)}</div>
+</Shell>

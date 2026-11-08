@@ -1,0 +1,9 @@
+---
+import PublicationDetailView from '../../../components/views/PublicationDetailView.astro';
+import { publicationsEn } from '../../../data/site.en';
+export function getStaticPaths() {
+  return publicationsEn.map((paper) => ({ params: { slug: paper.slug }, props: { paper } }));
+}
+const { paper } = Astro.props;
+---
+<PublicationDetailView lang="en" paper={paper} />
