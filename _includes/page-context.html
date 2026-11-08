@@ -1,0 +1,12 @@
+{% assign page_lang = page.lang | default: "en" %}
+{% assign t = site.data.i18n[page_lang] %}
+{% assign ui = site.data.ui-text[page_lang] %}
+{% assign display_page = page %}
+{% if page.publication_source %}
+  {% assign display_page = site.publications | where: "translation_key", page.publication_source | first %}
+{% endif %}
+{% assign display_excerpt = display_page.excerpt %}
+{% if page_lang == "zh" %}
+  {% assign display_excerpt = display_page.excerpt_zh | default: display_excerpt %}
+{% endif %}
+{% assign translation = site.data.translations[page.translation_key] %}

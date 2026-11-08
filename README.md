@@ -3,6 +3,31 @@
 
 ![Academic Pages template example](images/themes/homepage-light.png "Academic Pages template example")
 
+# Maintaining this bilingual site
+
+The English pages use the original URLs; Chinese pages live under `/zh/`.
+Home, CV, publications, publication details, and the visible sitemap have paired
+versions. The unused example pages from Academic Pages remain in English.
+
+- Edit homepage text and awards in `_data/home.yml` (`en` and `zh`).
+- Edit shared interface and CV labels in `_data/i18n.yml`. CV and publication
+  list markup is shared through `_includes/cv-content.html` and
+  `_includes/publications-content.html`.
+- Each bilingual page has a `lang` and `translation_key` in its front matter.
+  `_data/translations.yml` maps that key to both URLs; navigation and `hreflang`
+  links use this mapping. Add both routes there when adding a new page pair.
+- Keep paper titles, authors, venues, citations, and download URLs in the original
+  `_publications/*.md` file. Add `excerpt_zh` for its Chinese summary. Its Chinese
+  detail page in `_pages/` references the original `translation_key` through
+  `publication_source`, so bibliographic data does not need to be copied.
+- To add a paper, follow an existing English publication and its Chinese detail
+  page, then add its URL pair to `_data/translations.yml`. Keep permalinks unique.
+
+Before publishing, run `bundle exec jekyll build` and check language switching
+on both homepages, both CVs, both publication lists, and the paper detail pages.
+Switching language should preserve the current page; normal navigation and
+paper previous/next links should preserve the current language.
+
 # Getting Started
 
 1. Register a GitHub account if you don't have one and confirm your e-mail (required!)

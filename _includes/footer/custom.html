@@ -1,6 +1,8 @@
 <!-- start custom footer snippets -->
 
-<a href="/sitemap/">Sitemap</a>
+{% include page-context.html %}
+{% assign sitemap_url = site.data.translations.sitemap[page_lang] %}
+<a href="{{ sitemap_url | relative_url }}">{{ t.sitemap }}</a>
 
 <!-- Support for MatJax -->
 <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>

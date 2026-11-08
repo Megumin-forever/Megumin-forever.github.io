@@ -16,7 +16,7 @@ main:
 
 main_zh:
   - title: "学术成果"
-    url: /publications/
+    url: /zh/publications/
 
   - title: "简历"
-    url: /cv/
+    url: /zh/cv/

@@ -1,13 +1,19 @@
 {% include base_path %}
+{% include page-context.html %}
 {% assign home_url = "/" %}
 {% assign nav_links = site.data.navigation.main %}
 {% assign language_url = "/zh/" %}
 {% assign language_label = "中文" %}
+{% assign language_code = "zh" %}
 {% if page.lang == "zh" %}
   {% assign home_url = "/zh/" %}
   {% assign nav_links = site.data.navigation.main_zh | default: site.data.navigation.main %}
   {% assign language_url = "/" %}
   {% assign language_label = "English" %}
+  {% assign language_code = "en" %}
+{% endif %}
+{% if translation %}
+  {% assign language_url = translation[language_code] %}
 {% endif %}
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -24,15 +30,15 @@
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
+            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% elsif link.url contains '/publications/' and display_page.collection == 'publications' %}selected{% endif %}">
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
           <li class="masthead__menu-item persist">
-            <a href="{{ base_path }}{{ language_url }}">{{ language_label }}</a>
+            <a href="{{ base_path }}{{ language_url }}" lang="{{ language_code }}" hreflang="{{ language_code }}" rel="alternate">{{ language_label }}</a>
           </li>
           <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+            <a role="button" aria-label="{{ t.toggle_theme }}"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="{{ t.toggle_theme }}"></i></a>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>

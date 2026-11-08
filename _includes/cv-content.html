@@ -1,0 +1,59 @@
+{% include base_path %}
+{% include page-context.html %}
+{% assign home = site.data.home[page_lang] %}
+
+<h2>{{ home.education_title }}</h2>
+
+<div class="education-entry"
+     style="display: grid; grid-template-columns: minmax(0, 1fr) min(200px, 38%); gap: 24px; align-items: center; margin-bottom: 32px;">
+  <div>
+    <strong>{{ t.tsinghua }}</strong><br>
+    {{ t.incoming_masters }}<br>
+    {{ t.masters_start }}
+  </div>
+  <img src="{{ '/images/tsinghua-logo.png' | relative_url }}"
+       alt="{{ t.tsinghua }}"
+       style="width: 100%; max-width: 200px; height: auto; display: block;">
+</div>
+
+<div class="education-entry"
+     style="display: grid; grid-template-columns: minmax(0, 1fr) min(200px, 38%); gap: 24px; align-items: center; margin-bottom: 32px;">
+  <div>
+    <strong>{{ home.education.school }}</strong><br>
+    {{ home.education.college }}<br>
+    {{ home.education.period }}
+  </div>
+  <img src="{{ home.education.badge | prepend: base_path }}"
+       alt="{{ home.education.badge_alt }}"
+       style="width: 100%; max-width: 200px; height: auto; display: block;">
+</div>
+
+<h2>{{ t.research_experience }}</h2>
+
+<div class="education-entry">
+  <div>
+    <strong>{{ t.tsinghua }}</strong><br>
+    {{ t.research_intern }}<br>
+    {{ t.internship_period }}
+  </div>
+</div>
+
+<h2>{{ home.awards_title }}</h2>
+
+{% if home.awards %}
+<div class="awards-list">
+  {% for award in home.awards %}
+  <div style="margin-bottom: 18px;">
+    <strong>{{ award.name }}</strong><br>
+    <span style="font-size: 0.9em; opacity: 0.8;">
+      {{ award.academic_year }} · {{ award.issuer }}
+    </span>
+    {% if award.description %}
+    <div style="font-size: 0.88em; margin-top: 4px;">
+      {{ award.description }}
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}

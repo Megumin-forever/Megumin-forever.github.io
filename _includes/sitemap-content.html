@@ -1,0 +1,15 @@
+{% include page-context.html %}
+
+<p>{{ t.sitemap_intro }}</p>
+
+<h2>{{ t.pages }}</h2>
+<ul>
+  <li><a href="{{ site.data.translations.home[page_lang] | relative_url }}">{{ t.about }}</a></li>
+  <li><a href="{{ site.data.translations.cv[page_lang] | relative_url }}">{{ t.cv }}</a></li>
+  <li><a href="{{ site.data.translations.publications[page_lang] | relative_url }}">{{ t.publications }}</a></li>
+</ul>
+
+<h2>{{ t.publications }}</h2>
+{% for post in site.publications reversed %}
+  {% include archive-single.html %}
+{% endfor %}

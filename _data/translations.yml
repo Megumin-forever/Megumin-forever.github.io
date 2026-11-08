@@ -1,0 +1,22 @@
+# Each key connects the English and Chinese versions of the same page.
+home:
+  en: /
+  zh: /zh/
+cv:
+  en: /cv/
+  zh: /zh/cv/
+publications:
+  en: /publications/
+  zh: /zh/publications/
+sitemap:
+  en: /sitemap/
+  zh: /zh/sitemap/
+lozo-plus:
+  en: /publication/2026-05-01-lozo-plus-icml-2026
+  zh: /zh/publication/2026-05-01-lozo-plus-icml-2026
+ahzo:
+  en: /publication/2026-09-25-AHZO-NeurIPS-2026
+  zh: /zh/publication/2026-09-25-AHZO-NeurIPS-2026
+qca2s:
+  en: /publication/2026-09-25-QCA2S-NeurIPS-2026
+  zh: /zh/publication/2026-09-25-QCA2S-NeurIPS-2026

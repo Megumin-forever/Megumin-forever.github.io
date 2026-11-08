@@ -1,0 +1,11 @@
+{% assign paper = include.paper %}
+{% if paper.citation %}
+  <p class="publication-citation"{% if include.compact %} style="font-size: smaller"{% endif %}>{{ t.citation }} {{ paper.citation }}</p>
+{% endif %}
+{% if paper.paperurl or paper.slidesurl or paper.bibtexurl %}
+  <p class="publication-downloads"{% if include.compact %} style="font-size: smaller"{% endif %}>
+    {% if paper.paperurl %}<a href="{{ paper.paperurl }}">{{ t.download_paper }}</a>{% endif %}
+    {% if paper.slidesurl %}{% if paper.paperurl %} | {% endif %}<a href="{{ paper.slidesurl }}">{{ t.download_slides }}</a>{% endif %}
+    {% if paper.bibtexurl %}{% if paper.paperurl or paper.slidesurl %} | {% endif %}<a href="{{ paper.bibtexurl }}">{{ t.download_bibtex }}</a>{% endif %}
+  </p>
+{% endif %}
