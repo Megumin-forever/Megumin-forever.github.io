@@ -62,7 +62,7 @@ export const awardsEn = sourceAwards.map((award) => ({
   ...award,
   name: awardNames[award.id] ?? award.name,
   issuer: award.id === 'national-scholarship' ? 'Ministry of Education of the People’s Republic of China' : 'Jilin University',
-  description: award.id === 'national-scholarship' ? 'National scholarship for undergraduate students in China.' : '',
+  description: award.id === 'national-scholarship' ? 'The highest-level national scholarship awarded to outstanding undergraduate students in China.' : '',
 }));
 export const skillsEn = sourceSkills;
 export const postsEn = sourcePosts;

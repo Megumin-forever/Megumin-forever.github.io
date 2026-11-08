@@ -90,7 +90,7 @@ const { profile, news, education, publications, projects, experience, skills } =
 
   <section class="content-section" id="education">
     <div class="section-heading"><span class="section-number">06 / BACKGROUND</span><h2>{text.education} <em>{text.educationEn}</em></h2></div>
-    {education.map((item) => <div class="education-entry"><span class="item-date">{item.period}</span><h3>{item.degree}</h3><p class="timeline-place">{item.institution}</p><p>{item.detail}</p></div>)}
+    {education.map((item) => <div class="education-entry"><span class="item-date">{item.period}</span><h3>{item.degree}</h3><p class="timeline-place">{item.institution}</p><p>{item.detail}</p>{"logo" in item && item.logo && <img class="education-logo" src={item.logo} alt={item.institution} loading="lazy" />}</div>)}
     {skills.length > 0 && <div class="skills-grid">{skills.map((group) => <div class="skill-card"><h4>{group.group}</h4><div class="tag-list">{group.items.map((name) => <span class="tag">{name}</span>)}</div></div>)}</div>}
   </section>
 

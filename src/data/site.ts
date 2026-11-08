@@ -13,6 +13,7 @@ export const profile = {
   initials: 'M',
   role: '人工智能专业本科生',
   affiliation: '吉林大学 · 人工智能学院',
+  affiliationLogo: '/images/Jilin_University_Logo.svg.png',
   location: '',
   email: '', // 原站没有公开邮箱，不使用演示邮箱
   github: 'https://github.com/Megumin-forever',
@@ -106,7 +107,7 @@ export const experience = [
 ];
 
 export const awards = [
-  { id: 'national-scholarship', period: '2025–2026', name: '国家奖学金', issuer: '中华人民共和国教育部', description: '国家级本科生奖学金。' },
+  { id: 'national-scholarship', period: '2025–2026', name: '国家奖学金', issuer: '中华人民共和国教育部', description: '中国高校本专科学生能够获得的，荣誉等级最高的国家级奖学金。' },
   { id: 'excellent-2025', period: '2025–2026', name: '校优秀学生', issuer: '吉林大学', description: '' },
   { id: 'excellent-2024', period: '2024–2025', name: '校优秀学生', issuer: '吉林大学', description: '' },
   { id: 'first-class', period: '2024–2025', name: '一等奖学金', issuer: '吉林大学', description: '' },

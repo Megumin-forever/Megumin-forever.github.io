@@ -16,7 +16,7 @@ const showFacts = Boolean(profile.affiliation || profile.location);
       <p class="profile-role">{profile.role}</p>
     </div>
     {showFacts && <><div class="profile-rule"></div><div class="profile-facts">
-      {profile.affiliation && <p><span class="fact-icon">⌂</span>{profile.affiliation}</p>}
+      {profile.affiliation && <p><img class="fact-school-logo" src={profile.affiliationLogo} alt="" width="28" height="28" />{profile.affiliation}</p>}
       {profile.location && <p><span class="fact-icon">⌖</span>{profile.location}</p>}
     </div></>}
     <div class="profile-rule"></div>
