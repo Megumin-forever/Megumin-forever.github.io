@@ -13,7 +13,7 @@ export const profileEn = {
   affiliation: 'College of Artificial Intelligence · Jilin University',
   headline: 'An Artificial Intelligence student.',
   summary: 'An Artificial Intelligence student.',
-  about: "Hi, I'm Chengxun Jin, an undergraduate student in Artificial Intelligence at Jilin University and a research intern at Tsinghua University. I will begin my master's studies at Tsinghua University in 2027. My research and hands-on interests include LLM post-training, diffusion models, AI agents, and agent recursive self-improvement (RSI).",
+  about: "Hi, I'm Chengxun Jin, an undergraduate student in Artificial Intelligence at the College of Artificial Intelligence, Jilin University and a research intern at Tsinghua University. I will begin my master's studies at Tsinghua University in 2027. My research and hands-on interests include LLM post-training, diffusion model post-training, AI agents, and agent recursive self-improvement (RSI).",
 };
 
 export const newsEn = [

@@ -5,6 +5,13 @@ interface Props { lang: Language; }
 const { lang } = Astro.props;
 const text = ui[lang];
 const { profile, news, education, publications, projects, experience, skills } = getSiteData(lang);
+const universityLogos: Record<string, string> = {
+  '吉林大学': profile.affiliationLogo,
+  'Jilin University': profile.affiliationLogo,
+  '清华大学': '/images/Tsinghua_University_Logo.svg',
+  'Tsinghua University': '/images/Tsinghua_University_Logo.svg',
+};
+const aboutParts = profile.about.split(/(吉林大学|清华大学|Jilin University|Tsinghua University)/g);
 ---
 <Shell active="home" lang={lang}>
   <section class="hero" id="top">
@@ -42,7 +49,9 @@ const { profile, news, education, publications, projects, experience, skills } =
 
   <section class="content-section" id="about">
     <div class="section-heading"><span class="section-number">01 / INTRODUCTION</span><h2>{text.about} <em>{text.aboutEn}</em></h2></div>
-    <p class="body-lead">{profile.about}</p>
+    <p class="body-lead">{aboutParts.map((part) => universityLogos[part]
+      ? <span class="inline-university">{part}<img class="inline-university-logo" src={universityLogos[part]} alt="" width="20" height="20" /></span>
+      : part)}</p>
     <div class="focus-chips">{profile.researchAreas.map((area) => <span>{area}</span>)}</div>
   </section>
 

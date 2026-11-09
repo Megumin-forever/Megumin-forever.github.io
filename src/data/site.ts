@@ -13,7 +13,7 @@ export const profile = {
   initials: 'M',
   role: '人工智能专业本科生',
   affiliation: '吉林大学 · 人工智能学院',
-  affiliationLogo: '/images/Jilin_University_Logo.svg.png',
+  affiliationLogo: '/images/吉林大学-emblem-001.svg',
   location: '',
   email: '', // 原站没有公开邮箱，不使用演示邮箱
   github: 'https://github.com/Megumin-forever',
