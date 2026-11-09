@@ -95,19 +95,6 @@ button {font:inherit}
 .hero-aura-one {width:360px; height:360px; background:rgba(99,173,249,.17); left:-180px; top:-195px}
 .hero-aura-two {width:350px; height:350px; background:rgba(228,131,210,.22); right:-120px; bottom:-210px; animation-delay:-5s}
 @keyframes hero-drift {to{transform:translate3d(32px,-22px,0) scale(1.08)}}
-.hero-network {position:absolute; width:440px; height:420px; right:-80px; top:50%; transform:translateY(-47%); z-index:-1; opacity:.66; filter:drop-shadow(0 0 18px rgba(85,118,225,.12)); overflow:visible; pointer-events:none}
-.network-ring {stroke:rgba(101,123,215,.3);stroke-width:1.1;stroke-dasharray:3 9;transform-origin:280px 200px;animation:orbit 36s linear infinite}
-.network-ring.r2 {stroke:rgba(205,124,197,.35);animation-duration:29s;animation-direction:reverse}
-.network-ring.r3 {stroke:rgba(86,181,200,.43)}
-.network-path {stroke:rgba(96,131,209,.29);stroke-width:1.2;stroke-dasharray:4 7;animation:dash 28s linear infinite}
-.node {fill:#7b88de;filter:drop-shadow(0 0 7px rgba(127,141,241,.55));animation:node-pulse 4s ease-in-out infinite alternate}
-.node-2,.node-6 {fill:#cf85bd;animation-delay:-2s}
-.node-4,.node-8 {fill:#6ccbd4;animation-delay:-1s}
-.network-center {fill:rgba(112,122,216,.16);stroke:rgba(108,109,225,.5);stroke-width:1.5;animation:node-pulse 3s ease-in-out infinite alternate}
-.network-core {fill:#737ce8}
-@keyframes node-pulse {to{opacity:.45;transform:scale(.96)}}
-@keyframes orbit {to{transform:rotate(360deg)}}
-@keyframes dash {to{stroke-dashoffset:-200}}
 .hero-content {position:relative; z-index:2; max-width:625px; width:100%}
 .hero .eyebrow {margin-bottom:18px}
 .eyebrow {display:flex; gap:11px; align-items:center; color:var(--accent); margin:0 0 25px}
@@ -220,7 +207,6 @@ button {font:inherit}
  .profile-card {padding:23px 21px}
  .paper-card {grid-template-columns:140px minmax(0,1fr); gap:16px}
  .paper-art {min-height:185px}
- .hero-network {right:-170px; opacity:.42}
 }
 @media (max-width:820px) {
  .site-shell {max-width:720px; display:flex; flex-direction:column; padding-top:15px; gap:12px}
@@ -240,7 +226,6 @@ button {font:inherit}
  .sidebar-footnote {display:none}
  .main-panel {width:100%}
  .site-header {top:8px; margin-bottom:13px}
- .hero-network {right:-110px; opacity:.40}
  .hero h1 {font-size:clamp(34px,6.1vw,48px)}
 }
 @media (max-width:550px) {
@@ -255,7 +240,6 @@ button {font:inherit}
  .profile-eyebrow {font-size:9px}
  .hero {padding:28px 23px; min-height:0; border-radius:24px}
  .hero:before {inset:11px; border-radius:16px}
- .hero-network {width:360px; height:360px; right:-185px; top:56%; opacity:.25}
  .eyebrow {font-size:9px; letter-spacing:.065em; gap:8px}
  .eyebrow-line {width:16px}
  .hero-summary {font-size:12px}
@@ -280,8 +264,7 @@ button {font:inherit}
  .reveal {opacity:1;transform:none}
 }
 
-/* Aurora V2.1: additions only. V2's original palette, layout, SVG network,
-   atmosphere, typography and card geometry are intentionally unchanged. */
+/* Aurora V2.1: shared language controls, typing layout and card interactions. */
 .language-switch {
   display:inline-flex; align-items:center; justify-content:center; flex:none;
   padding:3px; border:1px solid var(--line); border-radius:12px;

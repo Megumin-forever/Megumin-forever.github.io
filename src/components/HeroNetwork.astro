@@ -1,0 +1,119 @@
+---
+// Fixed geometry keeps the illustration identical across renders and languages.
+const layers = [
+  { count: 4, x: 48, y: 200, color: '#6399dc' },
+  { count: 6, x: 140, y: 188, color: '#7b8bdd' },
+  { count: 7, x: 234, y: 176, color: '#9b7bd7' },
+  { count: 6, x: 328, y: 164, color: '#bd86c8' },
+  { count: 3, x: 420, y: 152, color: '#64b6c9' },
+].map((layer) => ({
+  ...layer,
+  nodes: Array.from({ length: layer.count }, (_, index) => ({
+    x: layer.x + (index - (layer.count - 1) / 2) * 6,
+    y: layer.y + (index - (layer.count - 1) / 2) * 34,
+  })),
+}));
+const routes = [[1, 2, 3, 2, 1], [2, 4, 5, 4, 2], [0, 1, 2, 1, 0]];
+const connections = layers.slice(0, -1).flatMap((layer, stage) =>
+  layer.nodes.flatMap((source, from) => layers[stage + 1].nodes.map((target, to) => ({
+    source, target,
+    primary: routes.some((route) => route[stage] === from && route[stage + 1] === to),
+  }))),
+);
+const signals = routes.flatMap((route, branch) => route.slice(0, -1).map((from, stage) => ({
+  source: layers[stage].nodes[from],
+  target: layers[stage + 1].nodes[route[stage + 1]],
+  color: layers[stage + 1].color,
+  delay: `${0.15 + stage * 0.65 + branch * 0.12}s`,
+  branch,
+})));
+---
+<svg class="hero-network" viewBox="0 0 480 350" fill="none" aria-hidden="true" focusable="false">
+  <g class="network-connections">
+    {connections.map(({ source, target, primary }) => <line
+      class:list={['network-edge', { 'network-edge-primary': primary, 'network-detail': !primary }]}
+      x1={source.x} y1={source.y} x2={target.x} y2={target.y}
+    />)}
+  </g>
+  <g class="network-signals">
+    {signals.map(({ source, target, color, delay, branch }) => <path
+      class:list={['network-signal', { 'network-detail': branch > 0 }]}
+      d={`M${source.x} ${source.y}L${target.x} ${target.y}`}
+      pathLength="1" style={`--signal-color:${color};--signal-delay:${delay}`}
+    />)}
+  </g>
+  {layers.map((layer, stage) => <g style={`--layer-color:${layer.color}`}>
+    {layer.nodes.map((node, index) => <g>
+      <circle class="network-neuron" cx={node.x} cy={node.y} r="6" />
+      {routes.map((route, branch) => route[stage] === index && <circle
+        class:list={['network-activation', { 'network-detail': branch > 0 }]}
+        cx={node.x} cy={node.y} r="10"
+        style={`--signal-delay:${0.15 + stage * 0.65 + branch * 0.12}s`}
+      />)}
+    </g>)}
+  </g>)}
+</svg>
+
+<style>
+  .hero-network {
+    --edge-color: #7f8cc9;
+    position: absolute;
+    width: 440px;
+    height: 350px;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    opacity: .82;
+    pointer-events: none;
+    mask-image: linear-gradient(90deg, transparent, #000 24%);
+  }
+  .network-edge {stroke: var(--edge-color); stroke-width: .7; opacity: .18}
+  .network-edge-primary {stroke-width: 1; opacity: .35}
+  .network-neuron {fill: var(--layer-color); opacity: .9}
+  .network-signal {
+    stroke: var(--signal-color);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-dasharray: .14 1;
+    stroke-dashoffset: .14;
+    opacity: 0;
+    animation: network-transmit 7s linear infinite;
+    animation-delay: var(--signal-delay);
+  }
+  .network-activation {
+    fill: var(--layer-color);
+    opacity: 0;
+    filter: blur(3px);
+    animation: network-activate 7s ease-out infinite;
+    animation-delay: var(--signal-delay);
+  }
+  :global(:root[data-theme='dark']) .hero-network {--edge-color: #a4b4ee; opacity: .85}
+  @keyframes network-transmit {
+    0% {stroke-dashoffset: .14; opacity: 0}
+    1% {opacity: .95}
+    9.3% {stroke-dashoffset: -1; opacity: .95}
+    11%, 100% {stroke-dashoffset: -1; opacity: 0}
+  }
+  @keyframes network-activate {
+    0%, 12%, 100% {opacity: 0}
+    2% {opacity: .55}
+    7% {opacity: .2}
+  }
+  @media (max-width: 1110px) {
+    .hero-network {width: 360px; height: 300px; right: -28px; opacity: .5; mask-image: linear-gradient(90deg, transparent, #000 45%)}
+    :global(:root[data-theme='dark']) .hero-network {opacity: .5}
+  }
+  @media (max-width: 820px) {
+    .hero-network {right: -6px}
+  }
+  @media (max-width: 550px) {
+    .hero-network {width: 260px; height: 250px; right: -12px; top: 46%; opacity: .32}
+    :global(:root[data-theme='dark']) .hero-network {opacity: .32}
+    .network-detail {display: none}
+    .network-edge-primary {opacity: .5}
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .network-signal, .network-activation {animation: none; opacity: 0}
+  }
+</style>

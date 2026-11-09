@@ -1,5 +1,6 @@
 ---
 import Shell from '../Shell.astro';
+import HeroNetwork from '../HeroNetwork.astro';
 import { getSiteData, pageUrl, ui, type Language } from '../../data/i18n';
 interface Props { lang: Language; }
 const { lang } = Astro.props;
@@ -17,22 +18,7 @@ const aboutParts = profile.about.split(/(吉林大学|清华大学|Jilin Univers
   <section class="hero" id="top">
     <div class="hero-aura hero-aura-one" aria-hidden="true"></div>
     <div class="hero-aura hero-aura-two" aria-hidden="true"></div>
-    <svg class="hero-network" viewBox="0 0 470 410" fill="none" aria-hidden="true">
-      <circle class="network-ring r1" cx="280" cy="200" r="148" />
-      <circle class="network-ring r2" cx="280" cy="200" r="105" />
-      <circle class="network-ring r3" cx="280" cy="200" r="58" />
-      <path class="network-path" d="M85 100 171 158 280 53 375 122 415 252 329 331 196 342 124 260 85 100M171 158 280 200 375 122M280 200 329 331M280 200 124 260M196 342 171 158" />
-      <circle class="node node-1" cx="85" cy="100" r="5" />
-      <circle class="node node-2" cx="171" cy="158" r="6" />
-      <circle class="node node-3" cx="280" cy="53" r="4" />
-      <circle class="node node-4" cx="375" cy="122" r="6" />
-      <circle class="node node-5" cx="415" cy="252" r="4" />
-      <circle class="node node-6" cx="329" cy="331" r="5" />
-      <circle class="node node-7" cx="196" cy="342" r="5" />
-      <circle class="node node-8" cx="124" cy="260" r="4" />
-      <circle class="network-center" cx="280" cy="200" r="16" />
-      <circle class="network-core" cx="280" cy="200" r="5" />
-    </svg>
+    <HeroNetwork />
     <div class="hero-content">
       <p class="eyebrow"><span class="eyebrow-line"></span> {text.heroEyebrow}</p>
       <h1 aria-label={`${text.heroLead} ${profile.name}.`}>{text.heroLead}<span class="hero-typing-viewport"><span class="hero-heading-gradient" data-hero-typing data-full-text={`${profile.name}.`} aria-hidden="true">{profile.name}.</span><span class="hero-heading-measure" aria-hidden="true">{profile.name}.</span></span></h1>
