@@ -13,7 +13,7 @@ export const profileEn = {
   affiliation: 'College of Artificial Intelligence · Jilin University',
   headline: 'An Artificial Intelligence student.',
   summary: 'An Artificial Intelligence student.',
-  about: "Hi, I'm Megumin (Chengxun Jin), an undergraduate student in Artificial Intelligence at Jilin University and a research intern at Tsinghua University. I will begin my master's studies at Tsinghua University in 2027. My research and hands-on interests include LLM post-training, diffusion models, AI agents, and agent recursive self-improvement (RSI).",
+  about: "Hi, I'm Chengxun Jin, an undergraduate student in Artificial Intelligence at Jilin University and a research intern at Tsinghua University. I will begin my master's studies at Tsinghua University in 2027. My research and hands-on interests include LLM post-training, diffusion models, AI agents, and agent recursive self-improvement (RSI).",
 };
 
 export const newsEn = [
@@ -24,7 +24,7 @@ export const newsEn = [
 
 export const educationEn = [
   { ...sourceEducation[0], period: 'Starting in 2027', degree: 'Incoming Master’s Student', institution: 'Tsinghua University', detail: 'Expected to begin graduate studies in 2027.' },
-  { ...sourceEducation[1], period: '2023 — Present', degree: 'Undergraduate · Artificial Intelligence', institution: 'College of Artificial Intelligence · Jilin University', detail: 'Undergraduate student majoring in Artificial Intelligence.' },
+  { ...sourceEducation[1], period: '2023 — Present', degree: 'Undergraduate · Artificial Intelligence', institution: 'School of Artificial Intelligence · Jilin University', detail: 'Undergraduate student majoring in Artificial Intelligence.' },
 ];
 
 export const publicationsEn = sourcePublications.map((paper) => ({

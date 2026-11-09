@@ -23,7 +23,7 @@ export const profile = {
   researchAreas: ['LLM Post-training', 'Diffusion Models', 'AI Agents', 'Agent RSI'],
   headline: '一名人工智能专业的学生。',
   summary: '一名人工智能专业的学生。',
-  about: '你好，我是 Megumin（金成勋），目前在吉林大学人工智能学院攻读人工智能专业本科，同时在清华大学开展科研实习。我计划于 2027 年进入清华大学攻读硕士学位。我的研究与实践方向包括大语言模型后训练、扩散模型、AI Agents 和 Agent 递归自我改进（RSI）。',
+  about: '你好，我是金成勋，目前在吉林大学人工智能学院攻读人工智能专业本科，同时在清华大学开展科研实习。我将于 2027 年进入清华大学攻读硕士学位。我的研究与实践方向包括大语言模型后训练、扩散模型后训练、AI Agents 和 Agent 递归自我改进（RSI）。',
 };
 
 export const news = [
@@ -35,16 +35,16 @@ export const news = [
 export const education = [
   {
     period: '2027 年起（即将入学）',
-    degree: '硕士研究生（即将入学）',
+    degree: '硕士研究生',
     institution: '清华大学',
-    detail: '计划于 2027 年开始硕士阶段学习。',
+    detail: '将于 2027 年开始硕士阶段学习。',
     logo: `${oldSite}/images/tsinghua-logo.png`,
   },
   {
     period: '2023 年 — 至今',
     degree: '人工智能 · 本科',
     institution: '吉林大学 · 人工智能学院',
-    detail: '人工智能专业本科生。',
+    detail: '人工智能专业。',
     logo: `${oldSite}/images/jluai.png`,
   },
 ];
@@ -71,7 +71,7 @@ export const publications = [
     authors: 'Jinjie Fang, Chengxun Jin, Yi Chang, and Bin Gu',
     venue: 'NeurIPS 2026',
     year: 2026,
-    description: 'NeurIPS 2026 录用论文，研究零阶微调中的主导低秩子空间。',
+    description: 'NeurIPS 2026 录用论文，研究大语言模型零阶微调中的主导低秩子空间。',
     tags: ['NeurIPS 2026', 'Zeroth-Order'],
     paperUrl: '/publication/2026-09-25-AHZO-NeurIPS-2026/',
     pdfUrl: '',
@@ -85,7 +85,7 @@ export const publications = [
     authors: 'Jinjie Fang, Chengxun Jin, Tianxing Man, Yi Chang, and Bin Gu',
     venue: 'ICML 2026',
     year: 2026,
-    description: 'ICML 2026 录用论文，提出基于贪心低秩子空间选择的零阶微调方法。',
+    description: 'ICML 2026 录用论文，提出基于贪心低秩子空间选择的零阶微调大语言模型的方法。',
     tags: ['ICML 2026', 'Fine-Tuning'],
     paperUrl: '/publication/2026-05-01-lozo-plus-icml-2026/',
     pdfUrl: '',
