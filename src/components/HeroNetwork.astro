@@ -13,20 +13,57 @@ const layers = [
     y: layer.y + (index - (layer.count - 1) / 2) * 34,
   })),
 }));
-const routes = [[1, 2, 3, 2, 1], [2, 4, 5, 4, 2], [0, 1, 2, 1, 0]];
+// Each round branches and converges through a different subset of the network.
+// Pairs are [source node, destination node] between adjacent layers.
+const rounds: Array<Array<Array<[number, number]>>> = [
+  [
+    [[0, 0], [0, 2], [2, 2], [2, 4]],
+    [[0, 1], [2, 1], [2, 3], [4, 3], [4, 5]],
+    [[1, 1], [1, 2], [3, 2], [3, 4], [5, 4]],
+    [[1, 0], [2, 0], [2, 1], [4, 1]],
+  ],
+  [
+    [[1, 1], [1, 3], [3, 3], [3, 5]],
+    [[1, 0], [1, 2], [3, 2], [3, 4], [5, 6]],
+    [[0, 0], [2, 0], [2, 3], [4, 3], [6, 5]],
+    [[0, 0], [3, 1], [3, 2], [5, 2]],
+  ],
+  [
+    [[0, 1], [2, 1], [2, 4], [3, 4]],
+    [[1, 1], [1, 3], [4, 3], [4, 5]],
+    [[1, 0], [3, 2], [3, 4], [5, 4]],
+    [[0, 0], [2, 1], [4, 1], [4, 2]],
+  ],
+];
+const roundInterval = 7;
+const stageInterval = 0.95;
+const nodeStagger = 0.028;
 const connections = layers.slice(0, -1).flatMap((layer, stage) =>
   layer.nodes.flatMap((source, from) => layers[stage + 1].nodes.map((target, to) => ({
     source, target,
-    primary: routes.some((route) => route[stage] === from && route[stage + 1] === to),
+    primary: rounds.some((round) => round[stage].some(([a, b]) => a === from && b === to)),
   }))),
 );
-const signals = routes.flatMap((route, branch) => route.slice(0, -1).map((from, stage) => ({
-  source: layers[stage].nodes[from],
-  target: layers[stage + 1].nodes[route[stage + 1]],
-  color: layers[stage + 1].color,
-  delay: `${0.15 + stage * 0.65 + branch * 0.12}s`,
-  branch,
-})));
+const signals = rounds.flatMap((round, roundIndex) => round.flatMap((edges, stage) =>
+  edges.map(([from, to], index) => ({
+    source: layers[stage].nodes[from],
+    target: layers[stage + 1].nodes[to],
+    color: layers[stage + 1].color,
+    delay: `${0.27 + roundIndex * roundInterval + stage * stageInterval + from * nodeStagger}s`,
+    strength: [0.95, 0.5, 0.7, 0.85, 0.6][(index + roundIndex) % 5],
+  })),
+));
+const activations = rounds.flatMap((round, roundIndex) => layers.flatMap((layer, stage) => {
+  const activeNodes = stage === 0
+    ? round[0].map(([from]) => from)
+    : round[stage - 1].map(([, to]) => to);
+  return [...new Set(activeNodes)].map((index) => ({
+    node: layer.nodes[index],
+    color: layer.color,
+    delay: `${0.15 + roundIndex * roundInterval + stage * stageInterval + index * nodeStagger}s`,
+    strength: Math.min(0.95, 0.5 + activeNodes.filter((node) => node === index).length * 0.15),
+  }));
+}));
 ---
 <svg class="hero-network" viewBox="0 0 480 350" fill="none" aria-hidden="true" focusable="false">
   <g class="network-connections">
@@ -36,21 +73,21 @@ const signals = routes.flatMap((route, branch) => route.slice(0, -1).map((from, 
     />)}
   </g>
   <g class="network-signals">
-    {signals.map(({ source, target, color, delay, branch }) => <path
-      class:list={['network-signal', { 'network-detail': branch > 0 }]}
+    {signals.map(({ source, target, color, delay, strength }) => <path
+      class="network-signal"
       d={`M${source.x} ${source.y}L${target.x} ${target.y}`}
-      pathLength="1" style={`--signal-color:${color};--signal-delay:${delay}`}
+      pathLength="1" style={`--signal-color:${color};--signal-delay:${delay};--signal-strength:${strength}`}
     />)}
   </g>
-  {layers.map((layer, stage) => <g style={`--layer-color:${layer.color}`}>
-    {layer.nodes.map((node, index) => <g>
-      <circle class="network-neuron" cx={node.x} cy={node.y} r="6" />
-      {routes.map((route, branch) => route[stage] === index && <circle
-        class:list={['network-activation', { 'network-detail': branch > 0 }]}
-        cx={node.x} cy={node.y} r="10"
-        style={`--signal-delay:${0.15 + stage * 0.65 + branch * 0.12}s`}
-      />)}
-    </g>)}
+  {layers.map((layer) => <g style={`--layer-color:${layer.color}`}>
+    {layer.nodes.map((node) => <circle class="network-neuron" cx={node.x} cy={node.y} r="6" />)}
+  </g>)}
+  {activations.map(({ node, color, delay, strength }) => <g
+    class="network-activation"
+    style={`--layer-color:${color};--signal-delay:${delay};--activation-strength:${strength}`}
+  >
+    <circle class="network-halo" cx={node.x} cy={node.y} r="11" />
+    <circle class="network-flash" cx={node.x} cy={node.y} r="6" />
   </g>)}
 </svg>
 
@@ -69,7 +106,7 @@ const signals = routes.flatMap((route, branch) => route.slice(0, -1).map((from, 
     mask-image: linear-gradient(90deg, transparent, #000 24%);
   }
   .network-edge {stroke: var(--edge-color); stroke-width: .7; opacity: .18}
-  .network-edge-primary {stroke-width: 1; opacity: .35}
+  .network-edge-primary {stroke-width: 1; opacity: .25}
   .network-neuron {fill: var(--layer-color); opacity: .9}
   .network-signal {
     stroke: var(--signal-color);
@@ -78,27 +115,27 @@ const signals = routes.flatMap((route, branch) => route.slice(0, -1).map((from, 
     stroke-dasharray: .14 1;
     stroke-dashoffset: .14;
     opacity: 0;
-    animation: network-transmit 7s linear infinite;
+    animation: network-transmit 21s linear infinite;
     animation-delay: var(--signal-delay);
   }
   .network-activation {
-    fill: var(--layer-color);
     opacity: 0;
-    filter: blur(3px);
-    animation: network-activate 7s ease-out infinite;
+    animation: network-activate 21s ease-out infinite;
     animation-delay: var(--signal-delay);
   }
+  .network-halo {fill: var(--layer-color); opacity: .55; filter: blur(3px)}
+  .network-flash {fill: color-mix(in srgb, var(--layer-color), #fff 45%)}
   :global(:root[data-theme='dark']) .hero-network {--edge-color: #a4b4ee; opacity: .85}
   @keyframes network-transmit {
     0% {stroke-dashoffset: .14; opacity: 0}
-    1% {opacity: .95}
-    9.3% {stroke-dashoffset: -1; opacity: .95}
-    11%, 100% {stroke-dashoffset: -1; opacity: 0}
+    .25% {opacity: var(--signal-strength)}
+    2.95% {stroke-dashoffset: -1; opacity: var(--signal-strength)}
+    3.4%, 100% {stroke-dashoffset: -1; opacity: 0}
   }
   @keyframes network-activate {
-    0%, 12%, 100% {opacity: 0}
-    2% {opacity: .55}
-    7% {opacity: .2}
+    0%, 3.6%, 100% {opacity: 0}
+    .4% {opacity: var(--activation-strength)}
+    1.6% {opacity: calc(var(--activation-strength) * .5)}
   }
   @media (max-width: 1110px) {
     .hero-network {width: 360px; height: 300px; right: -28px; opacity: .5; mask-image: linear-gradient(90deg, transparent, #000 45%)}
