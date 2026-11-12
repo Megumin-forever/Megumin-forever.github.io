@@ -1,6 +1,8 @@
 ---
 import Shell from '../Shell.astro';
 import HeroNetwork from '../HeroNetwork.astro';
+import PublicationBadges from '../PublicationBadges.astro';
+import ResearchTags from '../ResearchTags.astro';
 import { getSiteData, pageUrl, ui, type Language } from '../../data/i18n';
 interface Props { lang: Language; }
 const { lang } = Astro.props;
@@ -22,9 +24,8 @@ const aboutParts = profile.about.split(/(吉林大学|清华大学|Jilin Univers
     <div class="hero-content">
       <p class="eyebrow"><span class="eyebrow-line"></span> {text.heroEyebrow}</p>
       <h1 aria-label={`${text.heroLead} ${profile.name}.`}>{text.heroLead}<span class="hero-typing-viewport"><span class="hero-heading-gradient" data-hero-typing data-full-text={`${profile.name}.`} aria-hidden="true">{profile.name}.</span><span class="hero-heading-measure" aria-hidden="true">{profile.name}.</span></span></h1>
-      <p class="hero-summary">{text.heroSummary}</p>
       <div class="hero-live-line"><span class="live-lead">{text.heroFocus}</span></div>
-      <div class="hero-tag-list tag-list">{profile.researchAreas.map((tag) => <span class="tag">{tag}</span>)}</div>
+      <ResearchTags areas={profile.researchAreas} variant="hero" />
       <div class="hero-actions">
         <a class="btn btn-primary" href="#publications">{text.heroWork} <span>↗</span></a>
         <a class="btn btn-secondary" href={pageUrl(lang, 'cv')}>{text.heroCv} <span>→</span></a>
@@ -36,9 +37,9 @@ const aboutParts = profile.about.split(/(吉林大学|清华大学|Jilin Univers
   <section class="content-section" id="about">
     <div class="section-heading"><span class="section-number">01 / INTRODUCTION</span><h2>{text.about} <em>{text.aboutEn}</em></h2></div>
     <p class="body-lead">{aboutParts.map((part) => universityLogos[part]
-      ? <span class="inline-university">{part}<img class="inline-university-logo" src={universityLogos[part]} alt="" width="20" height="20" /></span>
+      ? <span class="inline-university">{part}<img class="inline-university-logo" src={universityLogos[part]} alt="" width="28" height="28" /></span>
       : part)}</p>
-    <div class="focus-chips">{profile.researchAreas.map((area) => <span>{area}</span>)}</div>
+    <ResearchTags areas={profile.researchAreas} variant="focus" />
   </section>
 
   <section class="content-section" id="news">
@@ -57,7 +58,7 @@ const aboutParts = profile.about.split(/(吉林大学|清华大学|Jilin Univers
         <div class="paper-body">
           <p class="paper-venue">{paper.venue}</p><h3>{paper.title}</h3><p class="paper-authors">{paper.authors}</p>
           <p class="paper-description">{paper.description}</p>
-          <div class="tag-list">{paper.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+          <PublicationBadges venue={paper.venue} conference={paper.conference} ccfRank={paper.ccfRank} />
           <div class="paper-actions">
             {paper.paperUrl ? <a href={lang === "en" ? `/en${paper.paperUrl}` : paper.paperUrl}>{text.paper}</a> : <span>{text.missingPaper}</span>}
             {paper.codeUrl && <a href={paper.codeUrl} target="_blank" rel="noopener noreferrer">{text.code}</a>}
@@ -68,6 +69,7 @@ const aboutParts = profile.about.split(/(吉林大学|清华大学|Jilin Univers
     <a class="section-more" href={pageUrl(lang, 'publications')}>{text.publications} <span>↗</span></a>
   </section>
 
+  {/* Research & practice temporarily hidden; keep the markup and data for later.
   {projects.length > 0 && <section class="content-section" id="projects">
     <div class="section-heading"><span class="section-number">04 / BUILD</span><h2>{text.featuredProjects} <em>{text.featuredProjectsEn}</em></h2></div>
     <div class="project-grid">
@@ -75,16 +77,17 @@ const aboutParts = profile.about.split(/(吉林大学|清华大学|Jilin Univers
     </div>
     <a class="section-more" href={pageUrl(lang, 'projects')}>{text.seeAllProjects} <span>↗</span></a>
   </section>}
+  */}
 
   <section class="content-section" id="experience">
-    <div class="section-heading"><span class="section-number">05 / JOURNEY</span><h2>{text.experience} <em>{text.experienceEn}</em></h2></div>
+    <div class="section-heading"><span class="section-number">04 / JOURNEY</span><h2>{text.experience} <em>{text.experienceEn}</em></h2></div>
     <div class="timeline">
       {experience.map((item) => <article class="timeline-entry"><span class="timeline-point"></span><p class="item-date">{item.period}</p><h3>{item.title}</h3><p class="timeline-place">{item.place}</p><p>{item.detail}</p></article>)}
     </div>
   </section>
 
   <section class="content-section" id="education">
-    <div class="section-heading"><span class="section-number">06 / BACKGROUND</span><h2>{text.education} <em>{text.educationEn}</em></h2></div>
+    <div class="section-heading"><span class="section-number">05 / BACKGROUND</span><h2>{text.education} <em>{text.educationEn}</em></h2></div>
     {education.map((item) => <div class="education-entry"><span class="item-date">{item.period}</span><h3>{item.degree}</h3><p class="timeline-place">{item.institution}</p><p>{item.detail}</p>{"logo" in item && item.logo && <img class="education-logo" src={item.logo} alt={item.institution} loading="lazy" />}</div>)}
     {skills.length > 0 && <div class="skills-grid">{skills.map((group) => <div class="skill-card"><h4>{group.group}</h4><div class="tag-list">{group.items.map((name) => <span class="tag">{name}</span>)}</div></div>)}</div>}
   </section>

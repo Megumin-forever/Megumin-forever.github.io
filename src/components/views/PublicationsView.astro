@@ -1,5 +1,6 @@
 ---
 import Shell from '../Shell.astro';
+import PublicationBadges from '../PublicationBadges.astro';
 import { getSiteData, ui, type Language } from '../../data/i18n';
 interface Props { lang: Language; }
 const { lang } = Astro.props;
@@ -24,7 +25,7 @@ const { profile, publications } = getSiteData(lang);
           <h3>{paper.title}</h3>
           <p class="paper-authors">{paper.authors}</p>
           <p class="paper-description">{paper.description}</p>
-          <div class="tag-list">{paper.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+          <PublicationBadges venue={paper.venue} conference={paper.conference} ccfRank={paper.ccfRank} />
           <div class="paper-actions">
             <a href={`${lang === 'en' ? '/en' : ''}${paper.paperUrl}`}>{text.paper}</a>
             {paper.pdfUrl && <a href={paper.pdfUrl} target="_blank" rel="noopener noreferrer">PDF ↗</a>}

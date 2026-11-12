@@ -1,11 +1,12 @@
 ---
 import Shell from '../Shell.astro';
+import PublicationBadges from '../PublicationBadges.astro';
 import { ui, type Language } from '../../data/i18n';
 interface Props {
   lang: Language;
   paper: {
     slug: string; title: string; authors: string; venue: string; year: number;
-    description: string; citation: string; tags: string[]; pdfUrl: string; codeUrl: string;
+    description: string; citation: string; conference: string; ccfRank: string; pdfUrl: string; codeUrl: string;
   };
 }
 const { lang, paper } = Astro.props;
@@ -20,7 +21,7 @@ const localeUrls = {
     <p class="eyebrow"><span class="eyebrow-line"></span> {paper.venue}</p>
     <h1>{paper.title}</h1>
     <p>{paper.authors}</p>
-    <div class="tag-list">{paper.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+    <PublicationBadges venue={paper.venue} conference={paper.conference} ccfRank={paper.ccfRank} />
   </section>
   <section class="content-section publication-detail">
     <div class="section-heading"><span class="section-number">RESEARCH / {paper.year}</span><h2>{text.publications}</h2></div>

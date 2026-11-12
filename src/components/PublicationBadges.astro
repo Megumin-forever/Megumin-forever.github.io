@@ -1,0 +1,29 @@
+---
+interface Props {
+  venue: string;
+  conference: string;
+  ccfRank: string;
+}
+const { venue, conference, ccfRank } = Astro.props;
+---
+<div class="tag-list publication-badges">
+  <span class="publication-badge conference-badge" data-conference={conference}>{venue}</span>
+  <span class="publication-badge ccf-badge">CCF-{ccfRank}</span>
+</div>
+
+<style>
+  .publication-badge {
+    display: inline-block;
+    padding: 4px 11px;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.75;
+    white-space: nowrap;
+  }
+  .conference-badge {background: #485b91}
+  .conference-badge[data-conference='NeurIPS'] {background: #7051b5}
+  .conference-badge[data-conference='ICML'] {background: #167589}
+  .ccf-badge {background: #43536f}
+</style>

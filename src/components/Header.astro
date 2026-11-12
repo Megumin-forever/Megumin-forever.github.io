@@ -3,7 +3,8 @@ import { pageUrl, ui, type Language, type Page } from '../data/i18n';
 interface Props { active?: Page; lang?: Language; localeUrls?: { zh: string; en: string }; }
 const { active = 'home', lang = 'zh', localeUrls } = Astro.props;
 const text = ui[lang];
-const links: Page[] = ['home', 'publications', 'projects', 'cv', 'blog'];
+// Projects are temporarily hidden; restore 'projects' here when ready.
+const links: Page[] = ['home', 'publications', /* 'projects', */ 'cv', 'blog'];
 ---
 <header class="site-header">
   <a class="wordmark" href={pageUrl(lang, 'home')} aria-label="Megumin — Home"><span class="wordmark-symbol">✳</span> MEGUMIN<span class="wordmark-accent">/</span>AI</a>

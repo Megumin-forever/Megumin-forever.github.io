@@ -1,0 +1,25 @@
+---
+interface Props { areas: string[]; variant?: 'hero' | 'focus' | 'sidebar'; }
+const { areas, variant = 'sidebar' } = Astro.props;
+---
+<div class:list={[variant === 'focus' ? 'focus-chips' : 'tag-list', { 'hero-tag-list': variant === 'hero' }]}>
+  {areas.map((area) => <span class="tag research-tag" data-area={area}>{area}</span>)}
+</div>
+
+<style>
+  .research-tag {
+    --research-ink: #315bb4;
+    --research-bg: #e9efff;
+    --research-border: #c9d6f5;
+    color: var(--research-ink);
+    background: var(--research-bg);
+    border-color: var(--research-border);
+  }
+  .research-tag[data-area='Diffusion Models'] {--research-ink:#7650a7;--research-bg:#f2eafb;--research-border:#ddccef}
+  .research-tag[data-area='AI Agents'] {--research-ink:#146d73;--research-bg:#e3f4f1;--research-border:#b9e1da}
+  .research-tag[data-area='Agent RSI'] {--research-ink:#a04670;--research-bg:#fbe9f1;--research-border:#edc8d9}
+  :global(:root[data-theme='dark']) .research-tag {--research-ink:#b8cdff;--research-bg:#27385e;--research-border:#435b8b}
+  :global(:root[data-theme='dark']) .research-tag[data-area='Diffusion Models'] {--research-ink:#dbc0fa;--research-bg:#3b2c52;--research-border:#634680}
+  :global(:root[data-theme='dark']) .research-tag[data-area='AI Agents'] {--research-ink:#a3e2d9;--research-bg:#1d4146;--research-border:#32666b}
+  :global(:root[data-theme='dark']) .research-tag[data-area='Agent RSI'] {--research-ink:#f1b7d1;--research-bg:#4c2b43;--research-border:#79455f}
+</style>

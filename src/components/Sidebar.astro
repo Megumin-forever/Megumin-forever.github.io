@@ -1,5 +1,6 @@
 ---
 import { getSiteData, ui, type Language } from '../data/i18n';
+import ResearchTags from './ResearchTags.astro';
 interface Props { lang?: Language; }
 const { lang = 'zh' } = Astro.props;
 const { profile } = getSiteData(lang);
@@ -21,7 +22,7 @@ const showFacts = Boolean(profile.affiliation || profile.location);
     </div></>}
     <div class="profile-rule"></div>
     <p class="small-label">{text.roleLabel}</p>
-    <div class="tag-list">{profile.researchAreas.map((tag) => <span class="tag">{tag}</span>)}</div>
+    <ResearchTags areas={profile.researchAreas} />
     <div class="profile-rule"></div>
     <p class="small-label">{text.contactLabel}</p>
     <div class="profile-links">
