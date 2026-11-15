@@ -23,7 +23,7 @@ export const ui = {
     about: '关于我', aboutEn: 'About', news: '最新动态', newsEn: 'News', publications: '代表论文', publicationsEn: 'Publications',
     featuredProjects: '研究与实践', featuredProjectsEn: 'Projects', experience: '科研经历', experienceEn: 'Experience',
     education: '教育经历', educationEn: 'Education', viewNews: '查看 ↗',
-    publicationIntro: '以下为已录用的会议论文，保留原始标题、作者顺序和引用信息。',
+    publicationIntro: '以下为已录用的论文',
     paper: '论文详情 ↗', missingPaper: '详情待补充', code: '代码 ↗', seeProject: '查看项目 ↗', seeAllProjects: '查看全部项目',
     letsConnect: 'LET’S CONNECT', connectTitle: '欢迎交流与合作。', connectDesc: '科研交流与项目讨论，可通过 GitHub 联系我。', sendMail: '发送邮件',
     projectHeader: '项目与实践', projectSubtitle: '我已开展实践的几个 AI 方向；具体项目技术说明将在整理后逐步公开。', missingProject: '',
