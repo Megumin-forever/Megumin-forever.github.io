@@ -1,6 +1,7 @@
 ---
 import Shell from '../Shell.astro';
 import PublicationBadges from '../PublicationBadges.astro';
+import PublicationAuthors from '../PublicationAuthors.astro';
 import { ui, type Language } from '../../data/i18n';
 interface Props {
   lang: Language;
@@ -20,7 +21,7 @@ const localeUrls = {
   <section class="subpage-header publication-detail">
     <p class="eyebrow"><span class="eyebrow-line"></span> {paper.venue}</p>
     <h1>{paper.title}</h1>
-    <p>{paper.authors}</p>
+    <p><PublicationAuthors authors={paper.authors} /></p>
     <PublicationBadges venue={paper.venue} conference={paper.conference} ccfRank={paper.ccfRank} />
   </section>
   <section class="content-section publication-detail">

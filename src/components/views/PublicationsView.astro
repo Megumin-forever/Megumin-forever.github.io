@@ -1,6 +1,7 @@
 ---
 import Shell from '../Shell.astro';
 import PublicationBadges from '../PublicationBadges.astro';
+import PublicationAuthors from '../PublicationAuthors.astro';
 import { getSiteData, ui, type Language } from '../../data/i18n';
 interface Props { lang: Language; }
 const { lang } = Astro.props;
@@ -23,7 +24,7 @@ const { profile, publications } = getSiteData(lang);
         <div class="paper-body">
           <p class="paper-venue">{paper.venue}</p>
           <h3>{paper.title}</h3>
-          <p class="paper-authors">{paper.authors}</p>
+          <p class="paper-authors"><PublicationAuthors authors={paper.authors} /></p>
           <p class="paper-description">{paper.description}</p>
           <PublicationBadges venue={paper.venue} conference={paper.conference} ccfRank={paper.ccfRank} />
           <div class="paper-actions">
