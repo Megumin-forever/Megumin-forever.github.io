@@ -1,0 +1,16 @@
+---
+interface Props { text: string; }
+const { text } = Astro.props;
+const parts = text.split(/((?:NeurIPS|ICML) \d{4})/g);
+---
+{parts.map((part) => /^(?:NeurIPS|ICML) \d{4}$/.test(part)
+  ? <strong class="news-conference" data-conference={part.split(' ')[0]}>{part}</strong>
+  : part)}
+
+<style>
+  .news-conference { font-weight: 700; }
+  .news-conference[data-conference='NeurIPS'] { color: #7051b5; }
+  .news-conference[data-conference='ICML'] { color: #167589; }
+  :global(:root[data-theme='dark']) .news-conference[data-conference='NeurIPS'] { color: #c7adf2; }
+  :global(:root[data-theme='dark']) .news-conference[data-conference='ICML'] { color: #8bd5e3; }
+</style>

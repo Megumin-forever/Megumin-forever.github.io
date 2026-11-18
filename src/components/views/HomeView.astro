@@ -4,6 +4,7 @@ import HeroNetwork from '../HeroNetwork.astro';
 import PublicationBadges from '../PublicationBadges.astro';
 import PublicationAuthors from '../PublicationAuthors.astro';
 import ResearchTags from '../ResearchTags.astro';
+import NewsText from '../NewsText.astro';
 import { getSiteData, pageUrl, ui, type Language } from '../../data/i18n';
 interface Props { lang: Language; }
 const { lang } = Astro.props;
@@ -46,7 +47,7 @@ const aboutParts = profile.about.split(/(吉林大学|清华大学|Jilin Univers
   <section class="content-section" id="news">
     <div class="section-heading"><span class="section-number">02 / UPDATES</span><h2>{text.news} <em>{text.newsEn}</em></h2></div>
     <div class="news-list">
-      {news.map((item) => <div class="news-item"><span class="item-date">{item.date}</span><p>{item.text} {item.url && <a href={item.url} target="_blank" rel="noopener noreferrer" class="text-link">{text.viewNews}</a>}</p></div>)}
+      {news.map((item) => <div class="news-item"><span class="item-date">{item.date}</span><p><NewsText text={item.text} /> {item.url && <a href={item.url} target="_blank" rel="noopener noreferrer" class="text-link">{text.viewNews}</a>}</p></div>)}
     </div>
   </section>
 
