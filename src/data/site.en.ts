@@ -30,10 +30,10 @@ export const educationEn = [
 export const publicationsEn = sourcePublications.map((paper) => ({
   ...paper,
   description: paper.id === 'qc-a2s'
-    ? 'Accepted to NeurIPS 2026. On latency-efficient temporal-coding spiking LLMs through discretization-aware conversion.'
+    ? 'On latency-efficient temporal-coding spiking LLMs through discretization-aware conversion.'
     : paper.id === 'ahzo'
-      ? 'Accepted to NeurIPS 2026. On identifying dominant low-rank subspaces in zeroth-order fine-tuning.'
-      : 'Accepted to ICML 2026. On zeroth-order fine-tuning via greedy low-rank subspace selection.',
+      ? 'On identifying dominant low-rank subspaces in zeroth-order fine-tuning LLMs.'
+      : 'On zeroth-order fine-tuning LLMs via greedy low-rank subspace selection.',
 }));
 
 const projectEn: Record<string, string> = {
