@@ -87,7 +87,7 @@ export const publications = [
     authors: 'Jinjie Fang, Chengxun Jin, Tianxing Man, Yi Chang, and Bin Gu',
     venue: 'ICML 2026',
     year: 2026,
-    description: '提出基于贪心低秩子空间选择的大语言模型零阶微调方法。',
+    description: '贪心低秩子空间选择的大语言模型零阶微调方法。',
     conference: 'ICML',
     ccfRank: 'A',
     paperUrl: '/publication/2026-05-01-lozo-plus-icml-2026/',
