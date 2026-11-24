@@ -57,7 +57,7 @@ const aboutParts = profile.about.split(/(吉林大学|清华大学|Jilin Univers
     <p class="section-intro">{text.publicationIntro}</p>
     <div class="paper-list">
       {publications.map((paper, i) => <article class="paper-card">
-        <PublicationArtwork posterUrl={paper.posterUrl} title={paper.title} index={i} label="RESEARCH NOTE" />
+        <PublicationArtwork posterUrl={paper.posterUrl} posterWidth={paper.posterWidth} posterHeight={paper.posterHeight} title={paper.title} index={i} label="RESEARCH NOTE" />
         <div class="paper-body">
           <p class="paper-venue">{paper.venue}</p><h3>{paper.title}</h3><p class="paper-authors"><PublicationAuthors authors={paper.authors} /></p>
           <p class="paper-description">{paper.description}</p>

@@ -1,10 +1,10 @@
 ---
-interface Props { posterUrl: string; title: string; index: number; label: string; }
-const { posterUrl, title, index, label } = Astro.props;
+interface Props { posterUrl: string; posterWidth: number; posterHeight: number; title: string; index: number; label: string; }
+const { posterUrl, posterWidth, posterHeight, title, index, label } = Astro.props;
 ---
 {posterUrl ? (
   <a class="paper-art paper-poster" href={posterUrl} target="_blank" rel="noopener noreferrer">
-    <img src={posterUrl} alt={`${title} — Poster`} width="2804" height="1803" loading="lazy" decoding="async" />
+    <img src={posterUrl} alt={`${title} — Paper preview`} width={posterWidth} height={posterHeight} loading="lazy" decoding="async" />
   </a>
 ) : (
   <div class="paper-art"><span class="paper-art-index">0{index + 1}</span><span class="paper-art-label">{label}</span><div class="paper-art-lines"><i></i><i></i><i></i></div></div>
