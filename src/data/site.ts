@@ -20,7 +20,7 @@ export const profile = {
   scholar: 'https://scholar.google.com/citations?user=HCiD6-MAAAAJ',
   cvUrl: '', // 仅在确认有真实 PDF 时设置
   avatar: `${oldSite}/images/R.jpg`,
-  researchAreas: ['LLM Post-training', 'Diffusion Models', 'AI Agents', 'Agent RSI'],
+  researchAreas: ['LLM', 'Diffusion Models', 'AI Agents', 'Agent RSI'],
   headline: '一名人工智能专业的学生。',
   summary: '一名人工智能专业的学生。',
   about: '你好，我是金成勋，目前在吉林大学人工智能学院攻读人工智能专业本科，同时在清华大学开展科研实习。我将于 2027 年进入清华大学攻读硕士学位。我的研究与实践方向包括大语言模型后训练、扩散模型后训练、AI Agents 和 Agent 递归自我改进（RSI）。',
