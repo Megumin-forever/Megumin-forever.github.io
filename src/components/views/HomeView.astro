@@ -3,6 +3,7 @@ import Shell from '../Shell.astro';
 import HeroNetwork from '../HeroNetwork.astro';
 import PublicationBadges from '../PublicationBadges.astro';
 import PublicationAuthors from '../PublicationAuthors.astro';
+import PublicationArtwork from '../PublicationArtwork.astro';
 import ResearchTags from '../ResearchTags.astro';
 import NewsText from '../NewsText.astro';
 import { getSiteData, pageUrl, ui, type Language } from '../../data/i18n';
@@ -56,7 +57,7 @@ const aboutParts = profile.about.split(/(吉林大学|清华大学|Jilin Univers
     <p class="section-intro">{text.publicationIntro}</p>
     <div class="paper-list">
       {publications.map((paper, i) => <article class="paper-card">
-        <div class="paper-art"><span class="paper-art-index">0{i+1}</span><span class="paper-art-label">RESEARCH NOTE</span><div class="paper-art-lines"><i></i><i></i><i></i></div></div>
+        <PublicationArtwork posterUrl={paper.posterUrl} title={paper.title} index={i} label="RESEARCH NOTE" />
         <div class="paper-body">
           <p class="paper-venue">{paper.venue}</p><h3>{paper.title}</h3><p class="paper-authors"><PublicationAuthors authors={paper.authors} /></p>
           <p class="paper-description">{paper.description}</p>

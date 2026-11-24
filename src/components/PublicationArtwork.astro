@@ -1,0 +1,18 @@
+---
+interface Props { posterUrl: string; title: string; index: number; label: string; }
+const { posterUrl, title, index, label } = Astro.props;
+---
+{posterUrl ? (
+  <a class="paper-art paper-poster" href={posterUrl} target="_blank" rel="noopener noreferrer">
+    <img src={posterUrl} alt={`${title} — Poster`} width="2804" height="1803" loading="lazy" decoding="async" />
+  </a>
+) : (
+  <div class="paper-art"><span class="paper-art-index">0{index + 1}</span><span class="paper-art-label">{label}</span><div class="paper-art-lines"><i></i><i></i><i></i></div></div>
+)}
+
+<style>
+  .paper-art.paper-poster { align-self: center; min-height: 0; padding: 0; border: 1px solid var(--line); background: #fff; }
+  .paper-art.paper-poster::before, .paper-art.paper-poster::after { display: none; }
+  .paper-poster img { display: block; width: 100%; height: auto; }
+  .paper-poster:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+</style>

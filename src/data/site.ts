@@ -52,6 +52,7 @@ export const education = [
 export const publications = [
   {
     id: 'qc-a2s',
+    posterUrl: '/images/QC-A2S-NeurIPS-2026-poster.png',
     slug: '2026-09-25-QCA2S-NeurIPS-2026',
     title: 'Achieve Latency-Efficient Temporal-Coding Spiking LLMs via Discretization-Aware Conversion',
     authors: 'Jinjie Fang, Tianxing Man, Chengxun Jin, Xiao Du, Haozhen Zhang, Yi Chang and Bin Gu',
@@ -67,6 +68,7 @@ export const publications = [
   },
   {
     id: 'ahzo',
+    posterUrl: '/images/AHZO-NeurIPS-2026-poster.png',
     slug: '2026-09-25-AHZO-NeurIPS-2026',
     title: 'Towards Identifying Dominant Low-Rank Subspaces in Zeroth-Order Fine-Tuning',
     authors: 'Jinjie Fang, Chengxun Jin, Yi Chang, and Bin Gu',
@@ -82,6 +84,7 @@ export const publications = [
   },
   {
     id: 'lozo-plus',
+    posterUrl: '',
     slug: '2026-05-01-lozo-plus-icml-2026',
     title: 'LOZO+: Provably Efficient Zeroth-Order Fine-Tuning via Greedy Low-Rank Subspace Selection',
     authors: 'Jinjie Fang, Chengxun Jin, Tianxing Man, Yi Chang, and Bin Gu',
